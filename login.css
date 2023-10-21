@@ -1,0 +1,31 @@
+form{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    padding: 50px 0;
+}
+
+fieldset{
+    display: inline-block;
+}
+
+a{
+    color: ivory;
+}
+
+a:hover{
+    color:rgb(255, 225, 94);
+}
+
+html{
+    background-image: url(web_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: ivory;
+}
