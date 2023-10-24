@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import PropTypes from "prop-types"
+import {Link, useNavigate} from "react-router-dom"
 
 async function loginUser(credentials){
   return fetch("http://localhost:3001/login", {
@@ -72,6 +73,7 @@ function Login({setToken}) {
           <input type="submit"></input>
         </form>
 
+        <Link to="/">Home</Link>
       </div>
     );
   }
