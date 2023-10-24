@@ -9,15 +9,15 @@
     <body>
         <h1>Welcome to Astroteach!</h1>
         <p>Please enter your username and password, or create an account <a href = "signup.html">here</a>.</p>
-        <form method = "GET" action = "planets.html">
+        <form method = "POST" action = "planets.html">
             <fieldset id = spacelog>
                 <legend>Login:</legend>
                 <p>
-                    <label>Username:</label>
+                    <label for="username">Username:</label>
                     <input type = "input" id = "username" name = "username" required = "required">
                 </p>
                 <p>
-                    <label>Password:</label>
+                    <label for="pass">Password:</label>
                     <input type = "password" id = "pass" name = "pass" required = "required">
                 </p>
                 <input type = "submit" id = "submitButton"/>
