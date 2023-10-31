@@ -5,29 +5,38 @@ import Axios from "axios";
 import PropTypes from "prop-types"
 import {Link, useNavigate} from "react-router-dom"
 
-async function loginUser(credentials){
-  return fetch("http://localhost:3001/login", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
-}
-
-function Login({setToken}) {
-    //variables
+function LogIn() {
+    //variables 
     const[listOfUsers, setListOfUsers] = useState([]); //stores lists of users
     const[username, setUserName] = useState(""); //stores username from form
     const[password, setPassword] = useState(""); //stores password from form
+    const navigate = useNavigate();
   
     //returns list of users from our backend
     useEffect(() => {
-      Axios.get("http://localhost:3001/getUsers").then((response) => {
+      Axios.get("getUsers").then((response) => {
         setListOfUsers(response.data);
       });
     }, []);
+
+    const loginUser = () => {
+      Axios.post("login", {
+        username,
+        password,
+      }, {withCredentials: true}).then((response) => {
+        if (response.data.username){
+          console.log(response.data);
+          alert("Logged in!"+response.data.username);
+          navigate("/");
+        }
+        else{
+          alert("User not found!");
+        }
+      })
+      .catch((err) => {
+        alert("Login error??");
+      });
+    }
   
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -35,7 +44,6 @@ function Login({setToken}) {
         username,
         password
       });
-      setToken(token);
     }
   
     //html of the page
@@ -78,8 +86,8 @@ function Login({setToken}) {
     );
   }
 
-export default Login;
+export default LogIn;
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
+// LogIn.propTypes = {
+//   setToken: PropTypes.func.isRequired
+// }

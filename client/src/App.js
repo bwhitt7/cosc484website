@@ -1,14 +1,13 @@
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home"
-import Login from "./pages/Login";
+import Login from "./pages/LogIn";
 import Profile from "./pages/Profile";
 import useToken from "./useToken"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Axios from "axios";
+Axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
-  const {token, setToken} = useToken();
-  
   // if(!token) {
   //   return <Login setToken={setToken} />
   // }

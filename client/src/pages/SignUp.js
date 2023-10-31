@@ -1,5 +1,4 @@
 //Sign up page
-
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import {Link, useNavigate} from "react-router-dom"
@@ -14,7 +13,7 @@ function SignUp() {
   
     //returns list of users from our backend
     useEffect(() => {
-      Axios.get("http://localhost:3001/getUsers").then((response) => {
+      Axios.get("getUsers").then((response) => {
         setListOfUsers(response.data);
       });
     }, []);
@@ -38,7 +37,7 @@ function SignUp() {
 
     //sends a user to be created by our backend
     const createUser = () =>{
-      Axios.post("http://localhost:3001/createUser", {
+      Axios.post("createUser", {
         username,
         email,
         password,
