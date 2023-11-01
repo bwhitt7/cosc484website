@@ -1,4 +1,4 @@
-# cosc484website
+# AstroTeach
 A website that teaches astronomy!!
 
 ## Client
