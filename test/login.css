@@ -20,11 +20,13 @@ a{
 }
 
 a:hover{
-    color:rgb(255, 225, 94);
+    color:rgb(216, 143, 255);
 }
 
+/*Image from Space Backgrounds Free Pixel Art Pack
+link: https://norma-2d.itch.io/space-backgrounds-pack*/
 html{
-    background-image: url(web_background.jpg);
+    background-image: url(1-Purple_640x360.png);
     background-repeat: no-repeat;
     background-size: cover;
     color: ivory;
