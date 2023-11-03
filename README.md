@@ -17,5 +17,4 @@ This is where we will design and test out the HTML before putting it into the fr
 
 
 ## Credits
-- Using some code from https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 - Front and backend created using https://www.youtube.com/watch?v=I7EDAR2GRVo
