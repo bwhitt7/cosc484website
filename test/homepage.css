@@ -9,3 +9,143 @@ html{
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
+
+h1{
+    text-align: center;
+    padding: 5px 0;
+}
+
+p{
+    text-align: center;
+}
+
+
+#sun{
+    position: fixed;
+    top: 175px;
+    left: 3px;
+    width: 235px;
+    height: 235px;
+}
+
+#sun:hover{
+    width: 240px;
+    height: 240px;
+}
+
+#mercury{
+    position: fixed;
+    top: 280px;
+    left: 250px;
+    width: 30px;
+    height: 30px;
+}
+
+#mercury:hover{
+    width: 35px;
+    height: 35px;
+}
+
+#venus{
+    position: fixed;
+    top: 220px;
+    left: 300px;
+    width: 60px;
+    height: 60px;
+}
+
+#venus:hover{
+    width: 65px;
+    height: 65px;
+}
+
+#earth{
+    position: fixed;
+    top: 270px;
+    left: 375px;
+    width: 60px;
+    height: 60px;
+}
+
+#earth:hover{
+    width: 65px;
+    height: 65px;
+}
+
+#mars{
+    position: fixed;
+    top: 220px;
+    left: 440px;
+    width: 47px;
+    height: 47px;
+}
+
+#mars:hover{
+    width: 52px;
+    height: 52px;
+}
+
+#jupiter{
+    position: fixed;
+    top: 225px;
+    left: 585px;
+    width: 110px;
+    height: 110px;
+}
+
+#jupiter:hover{
+    width: 115px;
+    height: 115px;
+}
+
+#saturn{
+    position: fixed;
+    top: 150px;
+    left: 710px;
+    width: 240;
+    height: 240;
+}
+
+#saturn:hover{
+    width: 247px;
+    height: 247px;
+}
+
+#uranus{
+    position: fixed;
+    top: 235px;
+    left: 960px;
+    width: 95px;
+    height: 95px;
+}
+
+#uranus:hover{
+    width: 100px;
+    height: 100px;
+}
+
+#neptune{
+    position: fixed;
+    top: 240px;
+    left: 1080px;
+    width: 85px;
+    height: 85px;
+}
+
+#neptune:hover{
+    width: 90px;
+    height: 90px;
+}
+
+#pluto{
+    position: fixed;
+    top: 270px;
+    left: 1200px;
+    width: 26px;
+    height: 26px;
+}
+
+#pluto:hover{
+    width: 31px;
+    height: 31px;
+}

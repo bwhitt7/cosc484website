@@ -55,3 +55,13 @@ body{
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
+
+.sun-main-image{
+    background-image: url(images/OVERSTELLAR/SolarSystem_Sun_140px_10x6.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
