@@ -1,3 +1,46 @@
+h1{
+    text-align: center;
+    padding: 20px 0;
+}
+
+table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+}
+
+td:first-child{
+    font-weight: bold;
+    background-color: brown;
+    width: 30%;
+}
+html{
+    background-image: url(images/SpaceBG_PixelArt-Pack_FreeSample/1-Red_320x180.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    color: ivory;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+body{
+    padding: 0 160px 50px 160px;
+}
+
+/* Classes */
+.description{
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    border: 1px solid white;
+    padding: 30px;
+    margin-top: 50px;
+}
 
 
 /* Images */
