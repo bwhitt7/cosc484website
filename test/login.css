@@ -40,8 +40,11 @@ a:hover{
 /*Image from Space Backgrounds Free Pixel Art Pack
 link: https://norma-2d.itch.io/space-backgrounds-pack*/
 html{
-    background-image: url(1-Purple_640x360.png);
+    background-image: url(images/SpaceBG_PixelArt-Pack_FreeSample/1-Purple_320x180.png);
     background-repeat: no-repeat;
     background-size: cover;
     color: ivory;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }

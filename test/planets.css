@@ -1,0 +1,14 @@
+
+
+/* Images */
+
+/* Credit: NASA, Hubble*/
+.jupiter-main-image{
+    background-image: url(images/OVERSTELLAR/SolarSystem_Jupiter_90px_16x15.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}

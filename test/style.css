@@ -60,10 +60,3 @@
 .align-content-end{
     align-content: flex-end;
 }
-
-
-.jupiter-main-image{
-    background-image: url(https://solarsystem.nasa.gov/system/resources/detail_files/2486_stsci-h-p1936a_1800.jpg);
-    background-size: cover;
-    background-position: center;
-}
