@@ -1,0 +1,11 @@
+/*Image from Space Backgrounds Free Pixel Art Pack
+link: https://norma-2d.itch.io/space-backgrounds-pack*/
+html{
+    background-image: url(images/SpaceBG_PixelArt-Pack_FreeSample/1-Blue_320x180.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: ivory;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
