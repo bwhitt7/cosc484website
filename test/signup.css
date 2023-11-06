@@ -19,17 +19,13 @@ a{
     color: ivory;
 }
 
-a:hover{
-    color:rgb(216, 143, 255);
-}
-
 #submitButton{
     border-radius: 4px;
-    background-color: rgb(79, 38, 85);
+    background-color: rgb(88, 55, 0);
     color: ivory;
     text-align: center;
     padding: 10px 24px;
-    border: 2px solid rgb(79, 38, 85);
+    border: 2px solid rgb(88, 55, 0);
 }
 
 #submitButton:hover{
@@ -40,7 +36,7 @@ a:hover{
 /*Image from Space Backgrounds Free Pixel Art Pack
 link: https://norma-2d.itch.io/space-backgrounds-pack*/
 html{
-    background-image: url(1-Purple_640x360.png);
+    background-image: url(1-Yellow_640x360.png);
     background-repeat: no-repeat;
     background-size: cover;
     color: ivory;
