@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import "../styles/signup.css"
 
 function SignUp() {
     //variables
@@ -20,7 +21,7 @@ function SignUp() {
 
 
     //form validation
-    const validateUser = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         if (username.length > 15 || username.length < 3) {
             alert("Username should be between 3-15 characters long.")
@@ -31,7 +32,7 @@ function SignUp() {
         }
         else {
             createUser();
-            navigate("/profile");
+            navigate("/");
         }
     }
 
@@ -55,46 +56,48 @@ function SignUp() {
     //html of the page
     return (
         <div className="SignUp">
-            <div className="userDisplay">
-                {listOfUsers.map((user) => {
-                    return (
-                        <div style={{ marginBottom: "10px" }}>
-                            <div>Name:{user.username}</div>
-                            <div>Email:{user.email}</div>
-                            <div>XP:{user.xp}</div>
-                        </div>
-                    );
-                })}
-            </div>
+        <h1>Sign Up for Astroteach</h1>
+        <p>Please fill out your information below to create an account and get started with Astroteach!</p>
 
-            <form method="POST" onSubmit={validateUser}>
-                <input
-                    type="text"
-                    placeholder="Username..."
-                    required
-                    onChange={(event) => {
-                        setUserName(event.target.value);
-                    }}>
-                </input>
+        <form method = "POST" onSubmit={handleSubmit}>
+            <fieldset>
+                <legend>Login:</legend>
+                <p>
+                    <label htmlFor="username">Username:</label>
+                    <input
+                        name="username"
+                        type="text"
+                        required
+                        onChange={(event) => {
+                            setUserName(event.target.value);
+                        }}>
+                    </input>
+                </p>
+                <p>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        name="email"
+                        type="email"
+                        required
+                        onChange={(event) => {
+                            setEmail(event.target.value);
+                        }}>
+                    </input>
+                </p>
+                <p>
+                    <label htmlFor="pass">Password:</label>
+                    <input
+                        name="pass"
+                        type="password"
+                        required
+                        onChange={(event) => {
+                            setPassword(event.target.value);
+                        }}>
+                    </input>
+                </p>
 
-                <input
-                    type="email"
-                    placeholder="Email..."
-                    required
-                    onChange={(event) => {
-                        setEmail(event.target.value);
-                    }}>
-                </input>
-
-                <input type="password"
-                    placeholder="Password..."
-                    required
-                    onChange={(event) => {
-                        setPassword(event.target.value);
-                    }}>
-                </input>
-
-                <input type="submit"></input>
+                <input type = "submit" id = "submitButton"/>
+            </fieldset>
             </form>
 
             <Link to="/">Home</Link>

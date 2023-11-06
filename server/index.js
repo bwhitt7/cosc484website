@@ -55,10 +55,12 @@ app.get("/getCurrentUser", (req, res) => {
             UserModel.find({_id:auth.currentUser.uid})
             .then((result) => {
                 res.json(result);
+                return;
             })
             .catch((err) => {
                 res.status(400).json(err);
-            })
+                return;
+            });
         } else {
             res.status(400).send("");
         }

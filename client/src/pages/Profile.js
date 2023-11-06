@@ -13,6 +13,7 @@ function Profile() {
             if (response.status != 400){
                 setUser(response.data);
                 console.log(response.data);
+                console.log(user.username);
             }
             else{
                 console.log("Not logged in");
