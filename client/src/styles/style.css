@@ -1,4 +1,12 @@
-
+html, body{
+    background-image: url(../images/SpaceBG_PixelArt-Pack_FreeSample/1-Blue_320x180.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: ivory;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
 /* Flex box stuff*/
 .flex-row{
     display: flex;

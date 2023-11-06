@@ -6,18 +6,10 @@ import "../styles/signup.css"
 
 function SignUp() {
     //variables
-    const [listOfUsers, setListOfUsers] = useState([]); //stores lists of users
     const [username, setUserName] = useState(""); //stores username from form
     const [email, setEmail] = useState(""); //stores email from form
     const [password, setPassword] = useState(""); //stores password from form
     const navigate = useNavigate();
-
-    //returns list of users from our backend
-    useEffect(() => {
-        Axios.get("getUsers").then((response) => {
-            setListOfUsers(response.data);
-        });
-    }, []);
 
 
     //form validation
@@ -44,7 +36,7 @@ function SignUp() {
             password,
         }).then((response) => {
             console.log(response);
-            if (response.status != 400){
+            if (response.status !== 400){
                 alert("USER CREATED");
             }
             else {
@@ -100,7 +92,6 @@ function SignUp() {
             </fieldset>
             </form>
 
-            <Link to="/">Home</Link>
         </div>
     );
 }

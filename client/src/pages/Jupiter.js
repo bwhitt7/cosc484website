@@ -1,0 +1,47 @@
+import "../styles/planets.css";
+
+function Jupiter() {
+
+    return(
+        <div className="planet">
+            <h1>Jupiter</h1>
+                <div className="flex-row">
+                    <div style={{flexGrow:2}} className="jupiter-main-image">
+                    </div>
+
+                    <table style={{flexGrow:3}}>
+                        <tr>
+                            <td>Radius</td>
+                            <td>71,500 km</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td>1.9 * 10^27 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Orbital Period</td>
+                            <td>11.8 years</td>
+                        </tr>
+                        <tr>
+                            <td>Rotational Period</td>
+                            <td>9.9 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Moons</td>
+                            <td>92</td>
+                        </tr>
+                    </table>
+                </div>
+                <div className="description">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut sem viverra aliquet eget sit amet tellus cras. Viverra vitae congue eu consequat ac felis. Diam volutpat commodo sed egestas egestas fringilla. Varius sit amet mattis vulputate. Tellus orci ac auctor augue mauris. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Accumsan in nisl nisi scelerisque. Ut porttitor leo a diam sollicitudin tempor. Eu lobortis elementum nibh tellus molestie nunc non blandit. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Eros in cursus turpis massa. Eu consequat ac felis donec et odio pellentesque diam volutpat. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. In egestas erat imperdiet sed euismod nisi. Gravida in fermentum et sollicitudin. Ultrices dui sapien eget mi. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Lacus laoreet non curabitur gravida arcu ac tortor dignissim.
+                    </p>
+                    <p>
+                        Venenatis cras sed felis eget velit aliquet sagittis. Nisl tincidunt eget nullam non nisi est sit. Augue neque gravida in fermentum et sollicitudin ac. Elementum curabitur vitae nunc sed velit dignissim sodales ut eu. In ante metus dictum at tempor commodo ullamcorper. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Cursus risus at ultrices mi tempus imperdiet. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Porttitor lacus luctus accumsan tortor posuere ac ut consequat. Eleifend donec pretium vulputate sapien nec sagittis. At imperdiet dui accumsan sit amet. Ut diam quam nulla porttitor massa id neque. Nam aliquam sem et tortor consequat. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet.
+                    </p>
+                </div>
+        </div>
+    );
+}
+
+export default Jupiter;

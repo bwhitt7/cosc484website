@@ -8,17 +8,10 @@ import  "../styles/login.css"
 
 function LogIn() {
     //variables 
-    const [listOfUsers, setListOfUsers] = useState([]); //stores lists of users
     const [email, setEmail] = useState(""); //stores email from form
     const [password, setPassword] = useState(""); //stores password from form
     const navigate = useNavigate();
 
-    //returns list of users from our backend
-    useEffect(() => {
-        Axios.get("getUsers").then((response) => {
-            setListOfUsers(response.data);
-        });
-    }, []);
 
     const loginUser = () => {
         Axios.post("login", {
@@ -88,7 +81,6 @@ function LogIn() {
             </fieldset>
             </form>
 
-            <Link to="/">Home</Link>
         </div>
     );
 }

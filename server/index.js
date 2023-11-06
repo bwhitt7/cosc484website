@@ -21,6 +21,7 @@ const auth = getAuth();
 //Express
 const express = require("express");
 const app = express();
+app.use(express.json());
 
 //MongoDB
 const mongoose = require("mongoose");
@@ -32,10 +33,6 @@ mongoose.connect(`${process.env.DB_URL}`);
 //connects our backend to our frontend
 const cors = require("cors");
 app.use(cors());
-
-
-app.use(express.json());
-
 
 
 
@@ -52,17 +49,18 @@ app.get("/getUsers", (req, res) => {
 app.get("/getCurrentUser", (req, res) => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            UserModel.find({_id:auth.currentUser.uid})
+            UserModel.find({_id:user.uid})
             .then((result) => {
-                res.json(result);
+                res.json(result[0]);
                 return;
             })
             .catch((err) => {
-                res.status(400).json(err);
+                res.send(err);
                 return;
             });
         } else {
-            res.status(400).send("");
+            res.status(400).send("Not logged in");
+            return;
         }
     });
 });
@@ -132,6 +130,10 @@ app.use("/login", (req, res) => {
         res.status(400).json(err);
     });
 
+});
+
+app.use("/logOutCurrentUser", (req, res) => {
+    auth.getInstance().signOut();
 });
 
 
