@@ -55,7 +55,6 @@ app.get("/getCurrentUser", (req, res) => {
                 return;
             })
             .catch((err) => {
-                res.send(err);
                 return;
             });
         } else {
@@ -133,14 +132,23 @@ app.use("/login", (req, res) => {
 });
 
 app.use("/logOutCurrentUser", (req, res) => {
-    auth.getInstance().signOut();
+    auth.signOut();
 });
 
 
 
-app.get("/addXP", () => {
-    
-    
+app.post("/addXP", (req, res) => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            UserModel.findOneAndUpdate({_id:user.uid}, {$inc: {xp: req.body.xp}})
+            .then(() => res.send("XP updated"))
+            .catch((err) => res.send(err));
+           
+        } else {
+            res.status(400).send("Not logged in");
+            return;
+        }
+    });
 });
 
 

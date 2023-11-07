@@ -1,6 +1,17 @@
 import "../styles/planets.css";
+import Axios from "axios";
+
 
 function Jupiter() {
+
+    const addXP = (xp) => {
+        Axios.post("addXP", {xp})
+        .then((res) => {
+            console.log(res);
+            alert("+"+xp+" XP");
+        });
+    }
+
 
     return(
         <div className="planet">
@@ -40,6 +51,8 @@ function Jupiter() {
                         Venenatis cras sed felis eget velit aliquet sagittis. Nisl tincidunt eget nullam non nisi est sit. Augue neque gravida in fermentum et sollicitudin ac. Elementum curabitur vitae nunc sed velit dignissim sodales ut eu. In ante metus dictum at tempor commodo ullamcorper. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Cursus risus at ultrices mi tempus imperdiet. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Porttitor lacus luctus accumsan tortor posuere ac ut consequat. Eleifend donec pretium vulputate sapien nec sagittis. At imperdiet dui accumsan sit amet. Ut diam quam nulla porttitor massa id neque. Nam aliquam sem et tortor consequat. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet.
                     </p>
                 </div>
+
+                <button onClick={() => addXP(10)}>Get XP</button>
         </div>
     );
 }

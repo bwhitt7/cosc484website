@@ -24,7 +24,7 @@ function SignUp() {
         }
         else {
             createUser();
-            navigate("/");
+            navigate("/LogIn");
         }
     }
 
