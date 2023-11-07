@@ -1,4 +1,5 @@
-html, body{
+html,
+body {
     background-image: url(../images/SpaceBG_PixelArt-Pack_FreeSample/1-Purple_320x180.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,64 +8,108 @@ html, body{
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
+
 /* Flex box stuff*/
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
 }
-.flex-column{
+
+.flex-column {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
 /* Justify content (horizontal alignment) */
-.justify-content-center{
+.justify-content-center {
     justify-content: center;
 }
-.justify-content-start{
+
+.justify-content-start {
     justify-content: flex-start;
 }
-.justify-content-end{
+
+.justify-content-end {
     justify-content: flex-end;
 }
-.justify-content-around{
+
+.justify-content-around {
     justify-content: space-around;
 }
-.justify-content-between{
+
+.justify-content-between {
     justify-content: space-between;
 }
 
 /* Align items (vertical alignment) */
-.align-items-center{
+.align-items-center {
     align-items: center;
 }
-.align-items-start{
+
+.align-items-start {
     align-items: flex-start;
 }
-.align-items-end{
+
+.align-items-end {
     align-items: flex-end;
 }
-.align-items-stretch{
+
+.align-items-stretch {
     align-items: stretch;
 }
-.align-items-baseline{
+
+.align-items-baseline {
     align-items: baseline;
 }
 
 /* Align content (space between items)*/
-.align-content-between{
+.align-content-between {
     align-content: space-between;
 }
-.align-content-around{
+
+.align-content-around {
     align-content: space-around;
 }
-.align-content-center{
+
+.align-content-center {
     align-content: center;
 }
-.align-content-start{
+
+.align-content-start {
     align-content: flex-start;
 }
-.align-content-end{
+
+.align-content-end {
     align-content: flex-end;
+}
+
+
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

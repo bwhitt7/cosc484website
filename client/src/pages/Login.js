@@ -52,7 +52,7 @@ function LogIn() {
             <h1>Welcome to Astroteach!</h1>
             <p>Please enter your username and password, or create an account <Link to="/SignUp">here</Link>.</p>
 
-            <form method = "POST" onSubmit={handleSubmit}>
+            <form method = "POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset>
                 <legend>Login:</legend>
                 <p>

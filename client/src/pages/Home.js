@@ -11,7 +11,7 @@ function Home() {
         <a href = "sun.html">
             <img src ={require("../images/OVERSTELLAR/SolarSystem_Sun_140px_10x6.gif")} alt = "The Sun" id = "sun"></img>
         </a>
-        <a href = "mercury.html">
+        <a href = "mercury.html" className="tooltip">
             <img src = {require("../images/OVERSTELLAR/SolarSystem_Mercury_21px_20x6.gif")} alt = "Mercury" id = "mercury"></img>
         </a>
         <a href = "venus.html">

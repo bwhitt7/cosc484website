@@ -68,10 +68,10 @@ app.get("/getCurrentUser", (req, res) => {
 //sends a user to be created in the database
 app.post("/createUser", (req, res) => {
 
-    var error;
     //create user
     createUserWithEmailAndPassword(auth, req.body.email, req.body.password)
     .then((userCredential) => {
+        var error;
 
         //add display name
         updateProfile(auth.currentUser, { displayName: req.body.username })
@@ -94,21 +94,21 @@ app.post("/createUser", (req, res) => {
         .catch((err) => {
             error = err;
         });
+        //if there's a failure, we delete the user we just made and send an error
+        if (error){
+            deleteUser(auth.currentUser)
+            .then(() => {
+                res.status(400).json(error);
+            })
+            .catch((err) => {
+                //bro idk
+            });
+        }
     })
     .catch((err) => {
-        error = err;
+        res.send("");
     });
 
-    //if there's a failure, we delete the user we just made and send an error
-    if (error){
-        deleteUser(auth.currentUser)
-        .then(() => {
-            res.status(400).json(error);
-        })
-        .catch((err) => {
-            //bro idk
-        });
-    }
 
 });
 

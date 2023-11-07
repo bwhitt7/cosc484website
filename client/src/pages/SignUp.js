@@ -24,7 +24,6 @@ function SignUp() {
         }
         else {
             createUser();
-            navigate("/LogIn");
         }
     }
 
@@ -36,8 +35,12 @@ function SignUp() {
             password,
         }).then((response) => {
             console.log(response);
-            if (response.status !== 400){
-                alert("USER CREATED");
+            if (response.status !== 400 && response.data){
+                alert("User "+username+" created");
+                navigate("/LogIn");
+            }
+            else if (!response.data){
+                alert("Account with this email already exists");
             }
             else {
                 alert("FAILURE");
@@ -51,7 +54,7 @@ function SignUp() {
         <h1>Sign Up for Astroteach</h1>
         <p>Please fill out your information below to create an account and get started with Astroteach!</p>
 
-        <form method = "POST" onSubmit={handleSubmit}>
+        <form method = "POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset>
                 <legend>Login:</legend>
                 <p>
