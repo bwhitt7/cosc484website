@@ -19,6 +19,15 @@ p{
     text-align: center;
 }
 
+#user{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#user:hover{
+    
+}
 
 #sun{
     position: fixed;
