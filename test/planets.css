@@ -65,3 +65,13 @@ body{
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
+
+.earth-main-image{
+    background-image: url(images/OVERSTELLAR/SolarSystem_Earth_50px_16x15.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
