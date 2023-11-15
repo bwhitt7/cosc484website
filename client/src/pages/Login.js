@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import PixelBackground from "../components/PixelBackground"
 
-import  "../styles/login.css"
+var color = "purple";
+
 
 function LogIn() {
     //variables 
@@ -42,45 +44,49 @@ function LogIn() {
     }
 
 
-
-
-
-
     //html of the page
     return (
-        <div className="LogIn">
-            <h1>Welcome to Astroteach!</h1>
-            <p>Please enter your username and password, or create an account <Link to="/SignUp">here</Link>.</p>
+        <div className="LogIn container text-center">
 
-            <form method = "POST" onSubmit={handleSubmit} autoComplete="off">
-            <fieldset>
-                <legend>Login:</legend>
-                <p>
-                    <label htmlFor="email">Email:</label>
+
+            <PixelBackground color="purple"></PixelBackground>
+
+
+            <h1 className="p-2">Welcome to Astroteach!</h1>
+            <p>Please enter your username and password, or create an account <Link to="/SignUp" className="link-primary">here</Link>.</p>
+
+            <form method="POST" onSubmit={handleSubmit} autoComplete="off">
+            <fieldset className="d-inline-block">
+                <legend>Login</legend>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label text-start w-100">Email</label>
                     <input
                         name="email"
+                        className="form-control"
                         type="email"
+                        placeholder="name@example.com"
                         required
                         onChange={(event) => {
                             setEmail(event.target.value);
                         }}>
                     </input>
-                </p>
-                <p>
-                    <label htmlFor="pass">Password:</label>
-                    <input type="password"
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="pass" className="form-label text-start w-100">Password</label>
+                    <input 
                         name="pass"
+                        className="form-control"
+                        type="password"
+                        placeholder=""
                         required
                         onChange={(event) => {
                             setPassword(event.target.value);
                         }}>
                     </input>
-                </p>
-
-                <input type = "submit" id = "submitButton"/>
+                </div>
+                <button type="submit" className="btn btn-primary rounded-0">Submit</button>
             </fieldset>
             </form>
-
         </div>
     );
 }

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/signup.css"
+import PixelBackground from "../components/PixelBackground"
 
 function SignUp() {
     //variables
@@ -50,53 +50,66 @@ function SignUp() {
 
     //html of the page
     return (
-        <div className="SignUp">
-        <h1>Sign Up for Astroteach</h1>
+        <div className="SignUp container text-center">
+
+        <PixelBackground color="blue"></PixelBackground>
+
+        <h1 className="p-2">Sign Up for Astroteach</h1>
         <p>Please fill out your information below to create an account and get started with Astroteach!</p>
 
-        <form method = "POST" onSubmit={handleSubmit} autoComplete="off">
-            <fieldset>
-                <legend>Login:</legend>
-                <p>
-                    <label htmlFor="username">Username:</label>
+        <form method="POST" onSubmit={handleSubmit} autoComplete="off">
+            <fieldset className="d-inline-block">
+                <legend>Sign Up</legend>
+                <div className="mb-3">
+                    <label htmlFor="username" className="form-label text-start w-100">Username</label>
                     <input
                         name="username"
+                        className="form-control"
                         type="text"
                         required
                         onChange={(event) => {
                             setUserName(event.target.value);
                         }}>
                     </input>
-                </p>
-                <p>
-                    <label htmlFor="email">Email:</label>
+                    <div className="form-text">Username must be between 3-15 characters long.</div>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label text-start w-100">Email</label>
                     <input
                         name="email"
+                        className="form-control"
                         type="email"
+                        placeholder="name@example.com"
                         required
                         onChange={(event) => {
                             setEmail(event.target.value);
                         }}>
                     </input>
-                </p>
-                <p>
-                    <label htmlFor="pass">Password:</label>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="pass" className="form-label text-start w-100">Password</label>
                     <input
                         name="pass"
+                        className="form-control"
                         type="password"
+                        placeholder=""
                         required
                         onChange={(event) => {
                             setPassword(event.target.value);
                         }}>
                     </input>
-                </p>
+                    <div className="form-text">Password must be between 3-32 characters long.</div>
+                </div>
 
-                <input type = "submit" id = "submitButton"/>
+                <button type="submit" className="btn btn-info">Submit</button>
             </fieldset>
             </form>
 
         </div>
     );
 }
+
+
+
 
 export default SignUp;

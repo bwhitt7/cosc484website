@@ -54,15 +54,21 @@ function NavBar() {
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                <li>
+                {user.username ? (
+                    <li>
                     <Link to="/profile">Profile</Link>
-                </li>
-                <li>
-                    <Link to="/signup">Sign Up</Link>
-                </li>
-                <li>
-                    <Link to="/login">Log In</Link>
-                </li>
+                    </li>
+                ): (
+                <>
+                    <li>
+                        <Link to="/signup">Sign Up</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">Log In</Link>
+                    </li>
+                </>
+
+                ) }
             </ul>
         </div>
     )
