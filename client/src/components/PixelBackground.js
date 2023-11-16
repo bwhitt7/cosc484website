@@ -4,11 +4,12 @@ import blue from "../images/SpaceBG_PixelArt-Pack_FreeSample/1-Blue_320x180.png"
 import green from "../images/SpaceBG_PixelArt-Pack_FreeSample/1-Green_320x180.png";
 import red from "../images/SpaceBG_PixelArt-Pack_FreeSample/1-Red_320x180.png";
 import yellow from "../images/SpaceBG_PixelArt-Pack_FreeSample/1-Yellow_320x180.png";
+import gray from "../images/SpaceBG_PixelArt-Pack_FreeSample/1-Gray_320x180.png";
 
 
 function PixelBackground(props){
 
-    var bg = purple;
+    var bg = gray;
     switch(props.color){
         case "purple":
             bg = purple;
@@ -24,6 +25,9 @@ function PixelBackground(props){
             break;
         case "yellow":
             bg = yellow;
+            break;
+        case "gray":
+            bg = gray;
             break;
     }
 
