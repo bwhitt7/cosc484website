@@ -1,4 +1,3 @@
-import "../styles/planets.css";
 import Planet from "./Planet";
 
 
