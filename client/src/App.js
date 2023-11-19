@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 import NavBar from "./components/NavBar";
 import Planet from "./components/Planet";
 import PlanetInfo from "./data/PlanetInfo";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 

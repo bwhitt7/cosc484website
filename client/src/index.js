@@ -1,9 +1,9 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Axios from "axios";
+import App from './App';
+
 import "./custom.scss"
 import "./styles/style.css"
 
