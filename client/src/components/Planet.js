@@ -1,6 +1,6 @@
 import "../styles/planets.css";
 import Axios from "axios";
-import PixelBackground from "../components/PixelBackground";
+import PixelBackground from "./PixelBackground";
 
 
 function Planet(props) {
@@ -32,7 +32,7 @@ function Planet(props) {
             <h1 className="text-center">{props.name}</h1>
                 <div className="row mb-3 mx-0">
 
-                    <div className={"col-4 "+props.name.toLowerCase()+"-main-image"}>
+                    <div className={"col-4 "+props.shortname+"-profile-image"}>
                     </div>
 
                     <div className="col-8">

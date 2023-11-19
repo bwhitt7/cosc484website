@@ -1,6 +1,7 @@
 //Home page
 import "../styles/homepage.css";
 import {Link} from "react-router-dom";
+import PlanetImages from "../data/PlanetImages";
 
 function Home() {
   return(
@@ -8,36 +9,36 @@ function Home() {
 
         <h1 className="text-center">The Solar System</h1>
         <p className="text-center p-2">Click on a planet to learn more about it!</p>
-        <a href = "sun.html">
-            <img src ={require("../images/OVERSTELLAR/SolarSystem_Sun_140px_10x6.gif")} alt = "The Sun" id = "sun"></img>
-        </a>
-        <a href = "mercury.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Mercury_21px_20x6.gif")} alt = "Mercury" id = "mercury"></img>
-        </a>
-        <a href = "venus.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Venus_50px_16x15.gif")} alt = "Venus" id = "venus"></img>
-        </a>
-        <a href = "earth.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Earth_50px_16x15.gif")} alt = "Earth" id = "earth"></img>
-        </a>
-        <a href = "mars.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Mars_37px_16x15.gif")} alt = "Mars" id = "mars"></img>
-        </a>
-        <Link to="/jupiter">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Jupiter_90px_16x15.gif")} alt = "Jupiter" id = "jupiter"></img>
+        <Link to="/sun">
+            <img src ={PlanetImages.sun} alt = "The Sun" id = "sun"></img>
         </Link>
-        <a href = "saturn.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Saturn_240px_16x15.gif")} alt = "Saturn" id = "saturn"></img>
-        </a>
-        <a href = "uranus.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Uranus_79px_16x15.gif")} alt = "Uranus" id = "uranus"></img>
-        </a>
-        <a href = "neptune.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Neptune_73px_16x15.gif")} alt = "Neptune" id = "neptune"></img>
-        </a>
-        <a href = "pluto.html">
-            <img src = {require("../images/OVERSTELLAR/SolarSystem_Pluto_21px_20x6.gif")} alt = "Pluto (my son)" id = "pluto"></img>
-        </a>
+        <Link to="/mercury">
+            <img src ={PlanetImages.mercury} alt = "Mercury" id = "mercury"></img>
+        </Link>
+        <Link to="/venus">
+            <img src ={PlanetImages.venus} alt = "Venus" id = "venus"></img>
+        </Link>
+        <Link to="/earth">
+            <img src ={PlanetImages.earth} alt = "Earth" id = "earth"></img>
+        </Link>
+        <Link to="/mars">
+            <img src ={PlanetImages.mars} alt = "Mars" id = "mars"></img>
+        </Link>
+        <Link to="/jupiter">
+            <img src ={PlanetImages.jupiter} alt = "Jupiter" id = "jupiter"></img>
+        </Link>
+        <Link to="/saturn">
+            <img src ={PlanetImages.saturn} alt = "Saturn" id = "saturn"></img>
+        </Link>
+        <Link to="/uranus">
+            <img src ={PlanetImages.uranus} alt = "Uranus" id = "uranus"></img>
+        </Link>
+        <Link to="/neptune">
+            <img src ={PlanetImages.neptune} alt = "Neptune" id = "neptune"></img>
+        </Link>
+        <Link to="/pluto">
+            <img src ={PlanetImages.pluto} alt = "Pluto (my son)" id = "pluto"></img>
+        </Link>
     </div>
   )
 }
