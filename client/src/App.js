@@ -1,6 +1,6 @@
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home"
-import Login from "./pages/LogIn";
+import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import NavBar from "./components/NavBar";
 import Planet from "./components/Planet";
