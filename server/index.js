@@ -155,3 +155,6 @@ app.post("/addXP", (req, res) => {
 app.listen(3001, () => {
     console.log("Server is running!");
 });
+
+// Export the Express API
+module.exports = app;
