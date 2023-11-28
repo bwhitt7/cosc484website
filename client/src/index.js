@@ -7,7 +7,7 @@ import App from './App';
 import "./custom.scss"
 import "./styles/style.css"
 
-Axios.defaults.baseURL = "http://localhost:3001";
+Axios.defaults.baseURL = `${process.env.SERVER_URL}`;
 
 //import "./styles/style.css"
 
