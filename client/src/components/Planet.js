@@ -13,13 +13,6 @@ import { Link } from "react-router-dom";
 
 function Planet(props) {
 
-    const addXP = (xp) => {
-        Axios.post("addXP", { xp })
-            .then((res) => {
-                console.log(res);
-                alert("+" + xp + " XP");
-            });
-    }
 
     return (
         <Container>
