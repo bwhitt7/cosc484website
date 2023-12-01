@@ -13,6 +13,31 @@ const PlanetInfo = [
         info:[
             "Test1",
             "Test2"
+        ],
+        quiz: [
+            {
+                question: "Test question 1",
+                index: 0,
+                answers: [
+                    "Answer 1",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Test question 2",
+                index: 1,
+                answers: [
+                    "Answer 1",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ],
+                correct: 2
+            }
         ]
     },
     {
@@ -29,6 +54,31 @@ const PlanetInfo = [
         info:[
             "Test1",
             "Test2"
+        ],
+        quiz:[
+            {
+                question: "Test question 1",
+                index: 0,
+                answers: [
+                    "Answer 1 right",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Test question 2",
+                index: 1,
+                answers: [
+                    "Answer 1",
+                    "Answer 2",
+                    "Answer 3 right",
+                    "Answer 4"
+                ],
+                correct: 2
+            }
         ]
     }
 ]

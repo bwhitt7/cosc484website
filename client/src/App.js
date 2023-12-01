@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 import NavBar from "./components/NavBar";
 import Planet from "./components/Planet";
 import PlanetInfo from "./data/PlanetInfo";
+import Quiz from "./components/Quiz";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -23,10 +24,17 @@ function App() {
             <Route path="profile" element={<Profile></Profile>}></Route>
             {PlanetInfo.map((data) => {
                 return(
+                    <>
                     <Route path={data.shortname} element={
                     <Planet
                         {...data}
                     ></Planet>}></Route>
+                    <Route path={data.shortname+"/quiz"} element={
+                    <Quiz
+                        {...data}
+                    ></Quiz>}></Route>
+
+                    </>
                 )
             })}
         </Routes>
