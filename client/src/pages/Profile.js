@@ -1,31 +1,26 @@
 //User profile page
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import Axios from "axios";
 
+//local imports
+import { UserContext } from "../App";
+import {getCurrentUser} from "../api";
+
+//style imports
 import "../styles/homepage.css";
 
 function Profile() {
 
-    const [user, setUser ] = useState({});
+    //get current user
+    const { user, setUser } = useContext(UserContext);
 
     useEffect(() => {
-        Axios.get("getCurrentUser").then((response) => {
-            if (response.status !== 400){
-                setUser(response.data);
-                console.log(response.data);
-                console.log(user.username);
-            }
-            else{
-                console.log("Not logged in");
-                setUser({});
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-            setUser({});
+        getCurrentUser().then((res) => {
+            setUser(res);
+            console.log(user);
         });
     }, []);
-
+    
     const logOutUser = () => {
         Axios.post("logOutCurrentUser").then((response) => {
 

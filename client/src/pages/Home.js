@@ -1,7 +1,11 @@
 //Home page
-import "../styles/homepage.css";
 import {Link} from "react-router-dom";
+
+//local imports
 import PlanetImages from "../data/PlanetImages";
+
+//style imports
+import "../styles/homepage.css";
 
 function Home() {
   return(
@@ -9,6 +13,7 @@ function Home() {
 
         <h1 className="text-center">The Solar System</h1>
         <p className="text-center p-2">Click on a planet to learn more about it!</p>
+        <div className="planets">
         <Link to="/sun">
             <img src ={PlanetImages.sun} alt = "The Sun" id = "sun"></img>
         </Link>
@@ -39,6 +44,7 @@ function Home() {
         <Link to="/pluto">
             <img src ={PlanetImages.pluto} alt = "Pluto (my son)" id = "pluto"></img>
         </Link>
+        </div>
     </div>
   )
 }

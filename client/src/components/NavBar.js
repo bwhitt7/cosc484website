@@ -1,8 +1,12 @@
-
-import { useState, useEffect } from "react";
-import Axios from "axios";
+//navbar on top of everything
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
+//local imports
+import { UserContext } from "../App";
+import {getCurrentUser} from "../api";
+
+//bootstrap imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,27 +15,8 @@ import {LinkContainer} from 'react-router-bootstrap';
 
 
 function NavBar() {
-
-    const [user, setUser] = useState({});
-
-    useEffect(() => {
-        Axios.get("getCurrentUser").then((response) => {
-            if (response.status === 200) {
-                setUser(response.data);
-                console.log(response.data);
-                console.log(user.username);
-            }
-            else {
-                console.log("Not logged in");
-                setUser({});
-            }
-        })
-            .catch((err) => {
-                console.log(err);
-                setUser({});
-            });
-    }, []);
-
+    //get current user
+    const { user, setUser } = useContext(UserContext);
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary">

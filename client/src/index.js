@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
 import Axios from "axios";
+
+//local imports
+import reportWebVitals from './reportWebVitals';
 import App from './App';
 
+//style imports
 import "./custom.scss"
 import "./styles/style.css"
 

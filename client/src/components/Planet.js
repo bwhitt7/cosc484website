@@ -1,18 +1,20 @@
-import "../styles/planets.css";
-import Axios from "axios";
-import PixelBackground from "./PixelBackground";
-import Quiz from "./Quiz";
+//Planet page template
+import { Link } from "react-router-dom";
 
+//local imports
+import PixelBackground from "./PixelBackground";
+import PlanetImages from "../data/PlanetImages";
+
+
+//bootstrap imports
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
 
 function Planet(props) {
-
 
     return (
         <Container>
@@ -22,7 +24,14 @@ function Planet(props) {
 
             <Row className="mb-3 mx-0">
 
-                <Col lg={4} className={props.shortname + "-profile-image"}></Col>
+                <Col lg={4} style={{
+                    backgroundImage:"url("+PlanetImages[props.shortname]+")",
+                    backgroundSize:"contain",
+                    backgroundPosition:"center",
+                    backgroundRepeat:"no-repeat",
+                    imageRendering:"pixelated",
+                    imageRendering:"crisp-edges"
+                    }}></Col>
 
                 <Col lg={8}>
                     <Table striped bordered>

@@ -1,9 +1,15 @@
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 
+//local imports
+import { UserContext } from "../App";
+//bootstrap imports
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 function Quiz(props){
+    const { user, setUser } = useContext(UserContext);
 
     const [finished, setFinished] = useState(false);
     const [selection, setSelection] = useState({});
@@ -44,7 +50,8 @@ function Quiz(props){
         console.log(num+"/"+numOfQuestions);
         setNumRight(num);
         setFinished(true);
-        if (numRight == numOfQuestions){
+        if (num == numOfQuestions && user.username){
+            console.log("xp time!")
             addXP(10);
         }
     }

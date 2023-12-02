@@ -1,11 +1,13 @@
 //Log in page
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import PixelBackground from "../components/PixelBackground"
 
-var color = "purple";
+//local imports
+import PixelBackground from "../components/PixelBackground";
+import { UserContext } from "../App";
+import { getCurrentUser } from "../api";
+
 
 
 function LogIn() {
@@ -14,16 +16,28 @@ function LogIn() {
     const [password, setPassword] = useState(""); //stores password from form
     const navigate = useNavigate();
 
+    //set current user
+    const { user, setUser } = useContext(UserContext);
 
+
+    //handle login
     const loginUser = () => {
         Axios.post("login", {
             email,
             password,
         })
         .then((response) => {
-            console.log(response);
-            if (response.status != 400) {
-                alert("Logged in! " + response.data);
+            //console.log(response);
+            if (response.data != false) {
+                alert("Logged in!");
+                
+                //set userstate
+                getCurrentUser().then((res) => {
+                    setUser(res);
+                    console.log(user);
+                });
+
+                //go home
                 navigate("/");
             }
             else {
@@ -35,6 +49,7 @@ function LogIn() {
         });
     }
 
+    //button function
     const handleSubmit = async (event) => {
         event.preventDefault();
         await loginUser({

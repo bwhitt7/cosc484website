@@ -58,7 +58,7 @@ app.get("/getCurrentUser", (req, res) => {
                 return;
             });
         } else {
-            res.status(400).send("Not logged in");
+            res.send("Not logged in");
             return;
         }
     });
@@ -106,7 +106,7 @@ app.post("/createUser", (req, res) => {
         }
     })
     .catch((err) => {
-        res.send("");
+        res.status(400).send("");
     });
 
 
@@ -123,10 +123,10 @@ app.use("/login", (req, res) => {
     signInWithEmailAndPassword(auth, req.body.email, req.body.password)
     .then((userCredential) => {
         // Signed in 
-        res.send("User logged in");
+        res.send(userCredential);
     })
     .catch((err) => {
-        res.status(400).json(err);
+        res.send(false);
     });
 
 });
@@ -141,16 +141,29 @@ app.post("/addXP", (req, res) => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             UserModel.findOneAndUpdate({_id:user.uid}, {$inc: {xp: req.body.xp}})
-            .then(() => res.send("XP updated"))
+            .then(() => res.send(true))
             .catch((err) => res.send(err));
            
         } else {
-            res.status(400).send("Not logged in");
+            res.send(false);
             return;
         }
     });
 });
 
+app.post("/addField", (req, res) => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            UserModel.findOneAndUpdate({_id:user.uid}, {$inc: {xp: req.body.xp}})
+            .then(() => res.send(true))
+            .catch((err) => res.send(err));
+           
+        } else {
+            res.send(false);
+            return;
+        }
+    });
+});
 
 app.listen(3001, () => {
     console.log("Server is running!");
