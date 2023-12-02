@@ -47,7 +47,7 @@ const PlanetInfo = [
     {
         name: "Mercury",
         shortname: "mercury",
-        color: "green",
+        color: "red",
         table: [
             {name: "Radius", value: "2440 km", id: 1},
             {name: "Mass", value: "3.30 * 10^23 kg", id: 2},
@@ -72,7 +72,7 @@ const PlanetInfo = [
                     "3",
                     "0"
                 ],
-                correct: 0
+                correct: 3
             },
 
             {
@@ -84,7 +84,7 @@ const PlanetInfo = [
                     "Potassium, calcium, helium",
                     "Hydrogen, helium, potassium"
                 ],
-                correct: 2
+                correct: 1
             }
         ]
     },
@@ -116,7 +116,7 @@ const PlanetInfo = [
                     "250 years",
                     "243 days"
                 ],
-                correct: 0
+                correct: 3
             },
 
             {
@@ -128,14 +128,14 @@ const PlanetInfo = [
                     "Carbon",
                     "Lithium"
                 ],
-                correct: 2
+                correct: 1
             }
         ]
     },
     {
         name: "Earth",
         shortname: "earth",
-        color: "green",
+        color: "red",
         table: [
             {name: "Radius", value: "6371 km", id: 1},
             {name: "Mass", value: "5.97 * 10^24 kg", id: 2},
@@ -160,7 +160,7 @@ const PlanetInfo = [
                     "Oxygen and Argon",
                     "Nitrogen and Oxygen"
                 ],
-                correct: 0
+                correct: 3
             },
 
             {
@@ -172,7 +172,7 @@ const PlanetInfo = [
                     "50 percent",
                     "33 percent"
                 ],
-                correct: 2
+                correct: 1
             }
         ]
     },
@@ -204,7 +204,7 @@ const PlanetInfo = [
                     "Olympus Mons",
                     "Kilimanjaro"
                 ],
-                correct: 0
+                correct: 2
             },
 
             {
@@ -216,48 +216,226 @@ const PlanetInfo = [
                     "11",
                     "2"
                 ],
-                correct: 2
+                correct: 3
             }
         ]
     },
     {
         name: "Jupiter",
         shortname: "jupiter",
-        color: "red",
+        color: "green",
         table: [
             {name: "Radius", value: "71,500 km", id: 1},
             {name: "Mass", value: "1.9 * 10^27 kg", id: 2},
             {name: "Orbital Period", value: "11.8 years", id: 3},
             {name: "Rotational Period", value: "9.9 hours", id: 4},
-            {name: "No. of Moons", value: "92", id: 5}
+            {name: "No. of Moons", value: "95", id: 5}
         ],
         info:[
-            "Test1",
-            "Test2"
+            "Jupiter is the fifth planet from the Sun, and also the largest of the planets in the Solar System. It is the first of the gas giants, " +
+            "and is so large that all the other planets in the Solar System could fit inside it. The most iconic feature of Jupiter is its Great Red Spot, " +
+            "which is actually a massive storm that has existed for hundreds of years. Jupiter has 95 moons, but its four largest and most well-known are Io, Europa, Ganymede, and Callisto.",
+            "Jupiter is mostly composed of hydrogen and helium, and due to atmospheric pressure, much of the hydrogen gas becomes liquid. This gives Jupiter the largest ocean in the Solar System." +
+            "Jupiter's atmosphere is composed of three layers. The outermost is made of ammonia ice, the middle layer of ammonium hydrosulfide crystals, and the central layer is made of water ice and vapor."
         ],
         quiz:[
             {
-                question: "Test question 1",
+                question: "What is the Great Red Spot?",
                 index: 0,
                 answers: [
-                    "Answer 1 right",
-                    "Answer 2",
-                    "Answer 3",
-                    "Answer 4"
+                    "A cool discoloration of Jupiter",
+                    "A massive storm in Jupiter's atmosphere",
+                    "A whirlpool that has formed in Jupiter's ocean",
+                    "A huge chunk of ice that appears red from space"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "What are the names of Jupiter's most well-known moons?",
+                index: 1,
+                answers: [
+                    "Charon, Titan, Io, Callisto",
+                    "Metis, Thebe, Ersa, Carpo",
+                    "Io, Europa, Ganymede, Callisto",
+                    "They don't have names, they are just moons"
+                ],
+                correct: 2
+            }
+        ]
+    },
+    {
+        name: "Saturn",
+        shortname: "saturn",
+        color: "green",
+        table: [
+            {name: "Radius", value: "58,232 km", id: 1},
+            {name: "Mass", value: "5.68 * 10^26 kg", id: 2},
+            {name: "Orbital Period", value: "29 years", id: 3},
+            {name: "Rotational Period", value: "11 hours", id: 4},
+            {name: "No. of Moons", value: "146", id: 5}
+        ],
+        info:[
+            "Saturn is the next of the gas giants and the sixth planet from the Sun. Its most well-known feature is its rings, which are made up of chunks of ice and rock. Each ring orbits at a different speed around the planet." + 
+            " There are seven rings in total, and the first three are divided from the other four by a large gap known as the Cassini Division.",
+            "Saturn is primarily composed of hydrogen and helium. These gases surround a dense core of elements such as iron and nickel." +
+            " Saturn is the only planet in the Solar System that is less dense than water. However, its atmosphere exerts extreme pressure and includes winds that can reach up to 1600 feet per second (the strongest winds on Earth only reach about 360 feet per second)."
+        ],
+        quiz: [
+            {
+                question: "What is Saturn's most notable feature?",
+                index: 0,
+                answers: [
+                    "Its temperature",
+                    "Its ocean",
+                    "Its volcano",
+                    "Its rings"
+                ],
+                correct: 3
+            },
+
+            {
+                question: "What is Saturn mostly made of?",
+                index: 1,
+                answers: [
+                    "Hydrogen and Oxygen",
+                    "Hydrogen and Helium",
+                    "Helium and Iron",
+                    "Iron and Nickel"
+                ],
+                correct: 1
+            }
+        ]
+    },
+    {
+        name: "Uranus",
+        shortname: "uranus",
+        color: "green",
+        table: [
+            {name: "Radius", value: "25,362 km", id: 1},
+            {name: "Mass", value: "8.681 * 10^25 kg", id: 2},
+            {name: "Orbital Period", value: "84 years", id: 3},
+            {name: "Rotational Period", value: "17 hours", id: 4},
+            {name: "No. of Moons", value: "27", id: 5}
+        ],
+        info:[
+            "Uranus, the seventh planet from the Sun, is the third largest planet in the Solar System. Unlike the other planets, it rotates at a 90-degree angle from its orbit, making it appear to spin sideways." + 
+            " Although they aren't as noticeable as Saturn's, Uranus has its own set of rings: 13 in total." + 
+            "The planet has fewer moons than Jupiter and Saturn, and they have a destinct difference. While most moons are named after mythological figures, Uranus' moons are named after Shakespeare characters (ex. Titania, Oberon).",
+            "Most of Uranus is made of a combination of water, methane, and ammonia that surrounds a small, rocky core. The color of Uranus comes from the presence of methane gas in its atmosphere, which absorbs red light and leaving the planet looking bluish-green." +
+            " The atmosphere of Uranus is composed mostly of hydrogen and helium, with lesser amounts of methane present along with trace amounts of water and ammonia.."
+        ],
+        quiz: [
+            {
+                question: "What is the orbital period of Uranus?",
+                index: 0,
+                answers: [
+                    "104 years",
+                    "84 days",
+                    "84 years",
+                    "54 years"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "What gives Uranus its unique color?",
+                index: 1,
+                answers: [
+                    "The methane gas in its atmosphere",
+                    "Its composition of water and ice",
+                    "The massive ocean that spans its surface",
+                    "A giant storm in its atmosphere"
+                ],
+                correct: 0
+            }
+        ]
+    },
+    {
+        name: "Neptune",
+        shortname: "neptune",
+        color: "green",
+        table: [
+            {name: "Radius", value: "24,622 km", id: 1},
+            {name: "Mass", value: "1.0243 * 10^26 kg", id: 2},
+            {name: "Orbital Period", value: "165 years", id: 3},
+            {name: "Rotational Period", value: "16 hours", id: 4},
+            {name: "No. of Moons", value: "14", id: 5}
+        ],
+        info:[
+            "Neptune is the last of the giants, and also the last officially recognized planet in the Solar System (the eigth planet from the Sun)." + 
+            " Its rotational axis is tilted at a similar angle to that of Earth, meaning Neptune experiences the seasons the same as Earth. However, because its orbital period is so long, each season lasts for over 40 years." + 
+            " Neptune has a total of 14 moons, with its largest moon known as Triton. Each of Neptune's moons are named after lesser sea-related deities from mythology since the planet is named after the Roman god of the sea.",
+            "Neptune also has rings, although less than Saturn or Uranus. Its five rings are named Galle, Leverrier, Lassell, Arago, and Adams." +
+            " The planet is composed of a mixture of water, methane, and ammonia around a dense, rocky core. It is thought that there could be an ocean of extremely hot water hidden under Neptune's clouds." +
+            " The atmosphere of Neptune is mostly hydrogen and helium, along with small amounts of methane."
+        ],
+        quiz: [
+            {
+                question: "How many moons does Neptune have?",
+                index: 0,
+                answers: [
+                    "4",
+                    "11",
+                    "14",
+                    "40"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "What is Neptune's atmosphere made of?",
+                index: 1,
+                answers: [
+                    "Hydrogen, Neon, Oxygen",
+                    "Helium, Methane, Neon",
+                    "Hydrogen, Helium, Carbon Dioxide",
+                    "Hydrogen, Helium, Methane"
+                ],
+                correct: 3
+            }
+        ]
+    },
+    {
+        name: "Pluto",
+        shortname: "pluto",
+        color: "purple",
+        table: [
+            {name: "Radius", value: "1151 km", id: 1},
+            {name: "Mass", value: "1.303 * 10^22 kg", id: 2},
+            {name: "Orbital Period", value: "248 years", id: 3},
+            {name: "Rotational Period", value: "153 hours", id: 4},
+            {name: "No. of Moons", value: "5", id: 5}
+        ],
+        info:[
+            "Pluto was originally considered the ninth planet of the Solar System, but was demoted to a dwarf planet by NASA. The planet is small, measuring at about half the width of the United States." + 
+            " The planet has a unique, oval-shaped orbit that actually crosses into Neptune's orbit. It also has a tilted axis, making it seem to spin almost on its side. Pluto has five moons: Charon (the largest), Nix, Hydra, Kerberos, and Styx.",
+            "Pluto is thought to have a rocky core surrounded by a layer of water ice. The planet has a mass that is about 1/6th of Earth's Moon." +
+            " Pluto has an extremely thin atmosphere composed mostly of molecular nitrogen, and trace amounts of methane and carbon monoxide have also been found."
+        ],
+        quiz: [
+            {
+                question: "What is unique about Pluto's orbit?",
+                index: 0,
+                answers: [
+                    "It is an elongated oval",
+                    "It is a perfect circle",
+                    "It does not orbit around the Sun",
+                    "It rotates around the Sun at an extremely high speed"
                 ],
                 correct: 0
             },
 
             {
-                question: "Test question 2",
+                question: "How many moons does Pluto have?",
                 index: 1,
                 answers: [
-                    "Answer 1",
-                    "Answer 2",
-                    "Answer 3 right",
-                    "Answer 4"
+                    "15",
+                    "0",
+                    "10",
+                    "5"
                 ],
-                correct: 2
+                correct: 3
             }
         ]
     }
