@@ -7,10 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 //style imports
-import "./custom.scss"
-import "./styles/style.css"
+import "./custom.scss";
+import "./styles/style.css";
 
-Axios.defaults.baseURL = "http://localhost:3001";
+Axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 //import "./styles/style.css"
 
