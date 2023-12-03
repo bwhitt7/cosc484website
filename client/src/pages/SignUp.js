@@ -1,7 +1,7 @@
 //Sign up page
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //local imports
 import PixelBackground from "../components/PixelBackground"

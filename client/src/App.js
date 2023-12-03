@@ -12,15 +12,16 @@ import NavBar from "./components/NavBar";
 import Planet from "./components/Planet";
 import PlanetInfo from "./data/PlanetInfo";
 import Quiz from "./components/Quiz";
-import api from "./api";
+import PrivateRoute from "./components/PrivateRoute";
+
 
 //create global context (user)
-export const UserContext = createContext({});
+export const UserContext = createContext(null);
 
 function App() {
 
     //global user variable
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
 
     //rendering
     return (
@@ -29,10 +30,10 @@ function App() {
             <NavBar></NavBar>
 
             <Routes>
-                <Route path="/" element={<Home></Home>}></Route>
                 <Route path="signup" element={<SignUp></SignUp>}></Route>
                 <Route path="login" element={<Login></Login>}></Route>
-                <Route path="profile" element={<Profile></Profile>}></Route>
+                <Route path="/" element={<Home></Home>}></Route>
+                <Route path="profile" element={<PrivateRoute path="/login" auth={user}><Profile></Profile></PrivateRoute>}></Route>
                 {PlanetInfo.map((data) => {
                     return (
                         <>
@@ -40,10 +41,10 @@ function App() {
                                 <Planet
                                     {...data}
                                 ></Planet>}></Route>
-                            <Route path={data.shortname + "/quiz"} element={
+                            <Route path={data.shortname + "/quiz"} element={<PrivateRoute path="/login" auth={user}>
                                 <Quiz
                                     {...data}
-                                ></Quiz>}></Route>
+                                ></Quiz></PrivateRoute>}></Route>
 
                         </>
                     )

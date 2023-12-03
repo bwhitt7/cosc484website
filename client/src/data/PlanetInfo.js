@@ -4,6 +4,7 @@ const PlanetInfo = [
         shortname: "sun",
         color: "yellow",
         table: [
+            {name: "Object Type", value: "Star", id:0},
             {name: "Radius", value: "695,700 km", id: 1},
             {name: "Mass", value: "1.9885 * 10^30 kg", id: 2},
             {name: "Orbital Period", value: "365.25 years", id: 3},
@@ -49,6 +50,7 @@ const PlanetInfo = [
         shortname: "mercury",
         color: "red",
         table: [
+            {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "2440 km", id: 1},
             {name: "Mass", value: "3.30 * 10^23 kg", id: 2},
             {name: "Orbital Period", value: "88 days", id: 3},
@@ -93,6 +95,7 @@ const PlanetInfo = [
         shortname: "venus",
         color: "red",
         table: [
+            {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "6052 km", id: 1},
             {name: "Mass", value: "4.87 * 10^24 kg", id: 2},
             {name: "Orbital Period", value: "225 days", id: 3},
@@ -137,6 +140,7 @@ const PlanetInfo = [
         shortname: "earth",
         color: "red",
         table: [
+            {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "6371 km", id: 1},
             {name: "Mass", value: "5.97 * 10^24 kg", id: 2},
             {name: "Orbital Period", value: "365 days", id: 3},
@@ -181,6 +185,7 @@ const PlanetInfo = [
         shortname: "mars",
         color: "red",
         table: [
+            {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "3390 km", id: 1},
             {name: "Mass", value: "6.42 * 10^23 kg", id: 2},
             {name: "Orbital Period", value: "687 days", id: 3},
@@ -225,6 +230,7 @@ const PlanetInfo = [
         shortname: "jupiter",
         color: "green",
         table: [
+            {name: "Object Type", value: "Gas giant", id:0},
             {name: "Radius", value: "71,500 km", id: 1},
             {name: "Mass", value: "1.9 * 10^27 kg", id: 2},
             {name: "Orbital Period", value: "11.8 years", id: 3},
@@ -269,6 +275,7 @@ const PlanetInfo = [
         shortname: "saturn",
         color: "green",
         table: [
+            {name: "Object Type", value: "Gas giant", id:0},
             {name: "Radius", value: "58,232 km", id: 1},
             {name: "Mass", value: "5.68 * 10^26 kg", id: 2},
             {name: "Orbital Period", value: "29 years", id: 3},
@@ -312,6 +319,7 @@ const PlanetInfo = [
         shortname: "uranus",
         color: "green",
         table: [
+            {name: "Object Type", value: "Ice giant", id:0},
             {name: "Radius", value: "25,362 km", id: 1},
             {name: "Mass", value: "8.681 * 10^25 kg", id: 2},
             {name: "Orbital Period", value: "84 years", id: 3},
@@ -356,6 +364,7 @@ const PlanetInfo = [
         shortname: "neptune",
         color: "green",
         table: [
+            {name: "Object Type", value: "Ice giant", id:0},
             {name: "Radius", value: "24,622 km", id: 1},
             {name: "Mass", value: "1.0243 * 10^26 kg", id: 2},
             {name: "Orbital Period", value: "165 years", id: 3},
@@ -401,6 +410,7 @@ const PlanetInfo = [
         shortname: "pluto",
         color: "purple",
         table: [
+            {name: "Object Type", value: "Dwarf planet", id:0},
             {name: "Radius", value: "1151 km", id: 1},
             {name: "Mass", value: "1.303 * 10^22 kg", id: 2},
             {name: "Orbital Period", value: "248 years", id: 3},

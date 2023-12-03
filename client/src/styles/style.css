@@ -1,3 +1,5 @@
+
+
 html, body {
     background-image: url(../images/SpaceBG_PixelArt-Pack_FreeSample/1-Purple_320x180.png);
     background-repeat: no-repeat;
@@ -8,3 +10,5 @@ html, body {
     width: 100vw;
     height: 100vh;
 }
+
+input[type="radio"], .Quiz label { cursor: pointer; }

@@ -1,5 +1,5 @@
 //User profile page
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Axios from "axios";
 
 //local imports
@@ -14,13 +14,6 @@ function Profile() {
     //get current user
     const { user, setUser } = useContext(UserContext);
 
-    useEffect(() => {
-        getCurrentUser().then((res) => {
-            setUser(res);
-            console.log(user);
-        });
-    }, []);
-    
     const logOutUser = () => {
         Axios.post("logOutCurrentUser").then((response) => {
 

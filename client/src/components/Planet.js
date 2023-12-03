@@ -1,9 +1,11 @@
 //Planet page template
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 //local imports
 import PixelBackground from "./PixelBackground";
 import PlanetImages from "../data/PlanetImages";
+import { UserContext } from "../App";
 
 
 //bootstrap imports
@@ -15,6 +17,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 function Planet(props) {
+
+    const { user, setUser } = useContext(UserContext);
 
     return (
         <Container>
@@ -56,7 +60,7 @@ function Planet(props) {
                 })}
             </Card>
 
-            <Link to="quiz"><Button variant="primary">Quiz</Button></Link>
+            <Link to="quiz"><Button variant="primary" className="mx-auto m-3">{user ? "Quiz" : "Log in to view quizzes!"}</Button></Link>
 
         </Container>
     );

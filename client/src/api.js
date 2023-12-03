@@ -1,10 +1,22 @@
 import Axios from "axios";
-import { UserContext } from "./App";
-import { useContext } from "react";
 
 //const { user, setUser } = useContext(UserContext);
 
 
+function userDatabaseAdd(field, value){
+    return Axios.post("userDatabaseAdd", {field, value}).then((response) => {
+        if (response.status !== 400){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    .catch((err) => {
+        console.log(err);
+        return false;
+    });
+}
 
 function getCurrentUser(){
     return Axios.get("getCurrentUser").then((response) => {
@@ -14,13 +26,13 @@ function getCurrentUser(){
         }
         else{
             console.log("Not logged in");
-            return "This";
+            return null;
         }
     })
     .catch((err) => {
         console.log(err);
-        return "This2";
+        return null;
     });
 }
 
-export  {getCurrentUser};
+export  {getCurrentUser, userDatabaseAdd};

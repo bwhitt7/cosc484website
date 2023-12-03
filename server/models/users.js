@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
         type: Number,
         required: false
     }
-});
+}, {strict: false});
 
 const UserModel = mongoose.model("users", schema);
 module.exports = UserModel;

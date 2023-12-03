@@ -18,3 +18,6 @@ This is where we will design and test out the HTML before putting it into the fr
 
 ## Credits
 - Front and backend created using https://www.youtube.com/watch?v=I7EDAR2GRVo
+- Icons from https://fontawesome.com/
+- Pixel backgrounds from https://norma-2d.itch.io/
+- Pixel planets from https://overboy.itch.io/

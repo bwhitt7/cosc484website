@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 //local imports
 import { UserContext } from "../App";
 import {getCurrentUser} from "../api";
+import PlanetInfo from "../data/PlanetInfo";
 
 //bootstrap imports
 import Container from 'react-bootstrap/Container';
@@ -26,9 +27,18 @@ function NavBar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
-                        {user.username ? (
+                        {user ? (<>
                         <LinkContainer to="/profile"><Nav.Link>Profile</Nav.Link></LinkContainer>
-                        ):(<>
+                        <NavDropdown title="Planets" id="planet-dropdown">
+                            {PlanetInfo.map((data) => {
+                                return(
+                                    <LinkContainer to={"/"+data.shortname}>
+                                        <NavDropdown.Item>{data.name}</NavDropdown.Item>
+                                    </LinkContainer>
+                                )
+                            })}
+                        </NavDropdown>
+                        </>):(<>
                         <LinkContainer to="/signup"><Nav.Link>Sign Up</Nav.Link></LinkContainer>
                         <LinkContainer to="/login"><Nav.Link>Log In</Nav.Link></LinkContainer>
                         </>)}

@@ -1,7 +1,9 @@
 //Log in page
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 //local imports
 import PixelBackground from "../components/PixelBackground";
@@ -65,9 +67,7 @@ function LogIn() {
 
 
             <PixelBackground color="purple"></PixelBackground>
-
-
-            <h1 className="p-2">Welcome to Astroteach!</h1>
+            <h1 className="p-2">Log In to Astroteach!</h1>
             <p>Please enter your username and password, or create an account <Link to="/SignUp" className="link-primary">here</Link>.</p>
 
             <form method="POST" onSubmit={handleSubmit} autoComplete="off">
