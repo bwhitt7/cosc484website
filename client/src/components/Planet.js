@@ -60,7 +60,7 @@ function Planet(props) {
                 })}
             </Card>
 
-            <Link to="quiz"><Button variant="primary" className="mx-auto m-3">{user ? "Quiz" : "Log in to view quizzes!"}</Button></Link>
+            <Link to="quiz"><Button variant="primary" className="mx-auto m-3">{user ? (user[props.shortname+"_quiz"] ? "Quiz completed" : "Quiz") : "Log in to view quizzes!"}</Button></Link>
 
         </Container>
     );

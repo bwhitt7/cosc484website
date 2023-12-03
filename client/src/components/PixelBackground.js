@@ -36,7 +36,6 @@ function PixelBackground(props){
         <style type="text/css">{`
             html, body {
                 background: url(`+bg+`);
-                background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 image-rendering: pixelated;
@@ -46,6 +45,7 @@ function PixelBackground(props){
                 height: 100vh;
             }
         `}</style>
+        <body data-bs-theme={props.color}/>
         </Helmet>
     );
 }

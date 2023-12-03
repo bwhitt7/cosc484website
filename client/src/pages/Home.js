@@ -1,5 +1,7 @@
 //Home page
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 //local imports
 import PlanetImages from "../data/PlanetImages";
@@ -12,7 +14,8 @@ function Home() {
         <div className="Home">
 
 
-            <h1 className="text-center">AstroTeach</h1>
+            <h1 className="text-center"><FontAwesomeIcon icon={icon({name: 'meteor'})} /> AstroTeach</h1>
+            
             <p className="text-center p-2">Welcome to the Solar System! Click on a planet to learn more about it!</p>
             <div className="planets">
                 <Link to="/sun">

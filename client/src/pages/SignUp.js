@@ -61,7 +61,6 @@ function SignUp() {
 
         <form method="POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset className="d-inline-block">
-                <legend>Sign Up</legend>
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label text-start w-100">Username</label>
                     <input
@@ -103,7 +102,7 @@ function SignUp() {
                     <div className="form-text">Password must be between 3-32 characters long.</div>
                 </div>
 
-                <button type="submit" className="btn btn-info">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </fieldset>
             </form>
 

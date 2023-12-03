@@ -20,7 +20,7 @@ function NavBar() {
     const { user, setUser } = useContext(UserContext);
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary mb-3">
             <Container>
             <LinkContainer to="/"><Navbar.Brand>AstroTeach</Navbar.Brand></LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

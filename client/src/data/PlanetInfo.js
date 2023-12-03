@@ -48,7 +48,7 @@ const PlanetInfo = [
     {
         name: "Mercury",
         shortname: "mercury",
-        color: "red",
+        color: "gray",
         table: [
             {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "2440 km", id: 1},
@@ -93,7 +93,7 @@ const PlanetInfo = [
     {
         name: "Venus",
         shortname: "venus",
-        color: "red",
+        color: "yellow",
         table: [
             {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "6052 km", id: 1},
@@ -138,7 +138,7 @@ const PlanetInfo = [
     {
         name: "Earth",
         shortname: "earth",
-        color: "red",
+        color: "green",
         table: [
             {name: "Object Type", value: "Terrestrial planet", id:0},
             {name: "Radius", value: "6371 km", id: 1},
@@ -228,7 +228,7 @@ const PlanetInfo = [
     {
         name: "Jupiter",
         shortname: "jupiter",
-        color: "green",
+        color: "red",
         table: [
             {name: "Object Type", value: "Gas giant", id:0},
             {name: "Radius", value: "71,500 km", id: 1},
@@ -273,7 +273,7 @@ const PlanetInfo = [
     {
         name: "Saturn",
         shortname: "saturn",
-        color: "green",
+        color: "yellow",
         table: [
             {name: "Object Type", value: "Gas giant", id:0},
             {name: "Radius", value: "58,232 km", id: 1},
@@ -317,7 +317,7 @@ const PlanetInfo = [
     {
         name: "Uranus",
         shortname: "uranus",
-        color: "green",
+        color: "blue",
         table: [
             {name: "Object Type", value: "Ice giant", id:0},
             {name: "Radius", value: "25,362 km", id: 1},
@@ -362,7 +362,7 @@ const PlanetInfo = [
     {
         name: "Neptune",
         shortname: "neptune",
-        color: "green",
+        color: "blue",
         table: [
             {name: "Object Type", value: "Ice giant", id:0},
             {name: "Radius", value: "24,622 km", id: 1},

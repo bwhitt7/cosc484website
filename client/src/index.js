@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 //style imports
-import "./custom.scss";
+import "./styles/custom.scss";
 import "./styles/style.css";
 
 Axios.defaults.baseURL = process.env.REACT_APP_API_URL;

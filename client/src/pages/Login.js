@@ -72,7 +72,6 @@ function LogIn() {
 
             <form method="POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset className="d-inline-block">
-                <legend>Login</legend>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label text-start w-100">Email</label>
                     <input

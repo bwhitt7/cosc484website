@@ -5,6 +5,7 @@ import Axios from "axios";
 //local imports
 import { UserContext } from "../App";
 import { userDatabaseAdd, getCurrentUser } from "../api";
+import PixelBackground from "./PixelBackground";
 
 //bootstrap imports
 import Form from 'react-bootstrap/Form';
@@ -106,6 +107,7 @@ function Quiz(props){
 
     return(
         <div className="Quiz">
+            <PixelBackground color={props.color}></PixelBackground>
             <Container className="text-center">
             <h1 className="p-2">{props.name} Quiz</h1>
 
