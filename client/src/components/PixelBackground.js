@@ -36,11 +36,14 @@ function PixelBackground(props){
         <style type="text/css">{`
             html, body {
                 background: url(`+bg+`);
+                background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 image-rendering: pixelated;
                 image-rendering: -moz-crisp-edges;
                 image-rendering: crisp-edges;
+                width: 100vw;
+                height: 100vh;
             }
         `}</style>
         </Helmet>
