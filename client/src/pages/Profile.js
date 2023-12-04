@@ -49,7 +49,7 @@ function Profile() {
                         <tr key={3}>
                             <th scope="row">XP</th>
                             <td>
-                                <ProgressBar now={user.xp} max={100} label={user.xp}></ProgressBar>
+                                <ProgressBar variant="success" animated  now={user.xp} max={100} label={user.xp}></ProgressBar>
                             </td>
                         </tr>
                     </tbody>

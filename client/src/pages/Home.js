@@ -1,53 +1,36 @@
 //Home page
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 //local imports
 import PlanetImages from "../data/PlanetImages";
+import PlanetInfo from "../data/PlanetInfo";
+import { UserContext } from "../App";
 
 //style imports
 import "../styles/homepage.css";
 
 function Home() {
+    const { user, setUser } = useContext(UserContext);
     return (
         <div className="Home">
 
-
-            <h1 className="text-center"><FontAwesomeIcon icon={icon({name: 'meteor'})} /> AstroTeach</h1>
+            <h1 className="text-center pb-2"><FontAwesomeIcon icon={icon({name: 'meteor'})} /> AstroTeach</h1>
             
-            <p className="text-center p-2">Welcome to the Solar System! Click on a planet to learn more about it!</p>
+            <p className="text-center">Welcome to the Solar System! Click on a planet to learn more about it!</p>
             <div className="planets">
-                <Link to="/sun">
-                    <img src={PlanetImages.sun} alt="The Sun" id="sun"></img>
-                </Link>
-                <Link to="/mercury">
-                    <img src={PlanetImages.mercury} alt="Mercury" id="mercury"></img>
-                </Link>
-                <Link to="/venus">
-                    <img src={PlanetImages.venus} alt="Venus" id="venus"></img>
-                </Link>
-                <Link to="/earth">
-                    <img src={PlanetImages.earth} alt="Earth" id="earth"></img>
-                </Link>
-                <Link to="/mars">
-                    <img src={PlanetImages.mars} alt="Mars" id="mars"></img>
-                </Link>
-                <Link to="/jupiter">
-                    <img src={PlanetImages.jupiter} alt="Jupiter" id="jupiter"></img>
-                </Link>
-                <Link to="/saturn">
-                    <img src={PlanetImages.saturn} alt="Saturn" id="saturn"></img>
-                </Link>
-                <Link to="/uranus">
-                    <img src={PlanetImages.uranus} alt="Uranus" id="uranus"></img>
-                </Link>
-                <Link to="/neptune">
-                    <img src={PlanetImages.neptune} alt="Neptune" id="neptune"></img>
-                </Link>
-                <Link to="/pluto">
-                    <img src={PlanetImages.pluto} alt="Pluto (my son)" id="pluto"></img>
-                </Link>
+                {PlanetInfo.map((data) => {
+                    return(
+                    <Link to={"/"+data.shortname} id={data.shortname}>
+                        {user? 
+                        (user[data.shortname+"_quiz"] ? <FontAwesomeIcon icon={icon({name: 'check'})} className="icon-check text-black" /> : "")
+                        :""}
+                        <img src={PlanetImages[data.shortname]} alt={data.name} ></img>
+                    </Link>
+                    )
+                })}
             </div>
         </div>
     )

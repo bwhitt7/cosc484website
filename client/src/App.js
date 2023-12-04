@@ -2,6 +2,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect, useContext, createContext } from "react";
 import Axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 //local imports
 import SignUp from "./pages/SignUp";
@@ -15,6 +17,9 @@ import Quiz from "./components/Quiz";
 import PrivateRoute from "./components/PrivateRoute";
 
 
+import Container from "react-bootstrap/Container";
+
+
 //create global context (user)
 export const UserContext = createContext(null);
 
@@ -26,9 +31,10 @@ function App() {
     //rendering
     return (
         <BrowserRouter>
+            <Container fluid className="p-0">
             <UserContext.Provider value={{ user, setUser }}>
             <NavBar></NavBar>
-
+            <div className="m-4">
             <Routes>
                 <Route path="signup" element={<SignUp></SignUp>}></Route>
                 <Route path="login" element={<Login></Login>}></Route>
@@ -50,7 +56,10 @@ function App() {
                     )
                 })}
             </Routes>
+            </div>
             </UserContext.Provider>
+            <footer className="text-center p-2">Look at the code on <a href="https://github.com/bwhitt7/cosc484website"><FontAwesomeIcon icon={icon({name: 'github', style:"brands"})} /> Github!</a></footer>
+            </Container>
         </BrowserRouter>
     )
 }

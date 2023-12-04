@@ -21,10 +21,10 @@ function Planet(props) {
     const { user, setUser } = useContext(UserContext);
 
     return (
-        <Container>
+        <div className="planetPage">
             <PixelBackground color={props.color}></PixelBackground>
 
-            <h1 className="text-center">{props.name}</h1>
+            <h1 className="text-center pb-2">{props.name}</h1>
 
             <Row className="mb-3 mx-0">
 
@@ -38,7 +38,7 @@ function Planet(props) {
                     }}></Col>
 
                 <Col lg={8}>
-                    <Table striped bordered>
+                    <Table bordered hover>
                         <tbody>
                             {props.table.map((data) => {
                                 return (
@@ -60,9 +60,9 @@ function Planet(props) {
                 })}
             </Card>
 
-            <Link to="quiz"><Button variant="primary" className="mx-auto m-3">{user ? (user[props.shortname+"_quiz"] ? "Quiz completed" : "Quiz") : "Log in to view quizzes!"}</Button></Link>
+            <Link to="quiz"><Button variant="primary" className="mx-auto m-3 w-100">{user ? (user[props.shortname+"_quiz"] ? "Quiz completed" : "Quiz") : "Log in to view quizzes!"}</Button></Link>
 
-        </Container>
+        </div>
     );
 }
 

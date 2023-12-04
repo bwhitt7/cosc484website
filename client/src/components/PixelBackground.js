@@ -11,6 +11,7 @@ function PixelBackground(props){
 
     var bg = gray;
     switch(props.color){
+        default:
         case "purple":
             bg = purple;
             break;

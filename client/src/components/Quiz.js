@@ -63,6 +63,7 @@ function Quiz(props){
             addXP(10);
             //update user
             userDatabaseAdd(props.shortname+"_quiz", true).then((res) =>{
+                console.log("Testing xpadd?")
                 getCurrentUser().then((res) => {
                     setUser(res);
                     console.log(user[props.shortname+"_quiz"]);
@@ -77,7 +78,6 @@ function Quiz(props){
         Axios.post("addXP", { xp })
             .then((res) => {
                 console.log(res);
-                alert("+" + xp + " XP");
             });
     }
 
@@ -106,24 +106,22 @@ function Quiz(props){
     );
 
     return(
-        <div className="Quiz">
+        <div className="Quiz text-center">
             <PixelBackground color={props.color}></PixelBackground>
-            <Container className="text-center">
-            <h1 className="p-2">{props.name} Quiz</h1>
+            <h1 className="pb-2">{props.name} Quiz</h1>
 
             {finished==false ? 
             <Form>
                 {user[props.shortname+"_quiz"] ? <div>Quiz already completed!</div> : <></>}
                 {quizQuestions}
-                <Button variant="primary" onClick={checkQuestions}>Submit</Button>
+                <Button variant="primary" onClick={checkQuestions} className="w-100">Submit</Button>
             </Form>
             :
             <Card body>
                 <div>{numRight} / {numOfQuestions}</div>
-                {(numRight == numOfQuestions) ? <div>All answers correct!</div> : ""}
+                {(numRight == numOfQuestions) ? <div>All answers correct! +10 xp</div> : ""}
             </Card>
             }
-            </Container>
         </div>
     )
 }

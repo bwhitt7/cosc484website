@@ -1,6 +1,8 @@
 //navbar on top of everything
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 //local imports
 import { UserContext } from "../App";
@@ -20,16 +22,16 @@ function NavBar() {
     const { user, setUser } = useContext(UserContext);
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary mb-3">
+        <Navbar expand="lg" className="bg-body mb-3">
             <Container>
-            <LinkContainer to="/"><Navbar.Brand>AstroTeach</Navbar.Brand></LinkContainer>
+            <LinkContainer to="/"><Navbar.Brand><FontAwesomeIcon icon={icon({name: 'meteor'})} /> AstroTeach</Navbar.Brand></LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
+                        <LinkContainer to="/"><Nav.Link><FontAwesomeIcon icon={icon({name: 'home'})} /> Home</Nav.Link></LinkContainer>
                         {user ? (<>
-                        <LinkContainer to="/profile"><Nav.Link>Profile</Nav.Link></LinkContainer>
-                        <NavDropdown title="Planets" id="planet-dropdown">
+                        <LinkContainer to="/profile"><Nav.Link><FontAwesomeIcon icon={icon({name: 'user'})} /> Profile</Nav.Link></LinkContainer>
+                        <NavDropdown title={<span><FontAwesomeIcon icon={icon({name: 'globe'})} /> Planets</span>} id="planet-dropdown">
                             {PlanetInfo.map((data) => {
                                 return(
                                     <LinkContainer to={"/"+data.shortname}>
@@ -39,8 +41,8 @@ function NavBar() {
                             })}
                         </NavDropdown>
                         </>):(<>
-                        <LinkContainer to="/signup"><Nav.Link>Sign Up</Nav.Link></LinkContainer>
-                        <LinkContainer to="/login"><Nav.Link>Log In</Nav.Link></LinkContainer>
+                        <LinkContainer to="/signup"><Nav.Link><FontAwesomeIcon icon={icon({name: 'user-plus'})} /> Sign Up</Nav.Link></LinkContainer>
+                        <LinkContainer to="/login"><Nav.Link><FontAwesomeIcon icon={icon({name: 'arrow-right-from-bracket'})} /> Log In</Nav.Link></LinkContainer>
                         </>)}
                     </Nav>
                 </Navbar.Collapse>

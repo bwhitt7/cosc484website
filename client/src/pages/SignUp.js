@@ -6,6 +6,12 @@ import { useNavigate } from "react-router-dom";
 //local imports
 import PixelBackground from "../components/PixelBackground"
 
+//bootstrap imports
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Button from 'react-bootstrap/Button';
+
 function SignUp() {
     //variables
     const [username, setUserName] = useState(""); //stores username from form
@@ -21,8 +27,8 @@ function SignUp() {
             alert("Username should be between 3-15 characters long.")
             return false;
         }
-        else if (password.length > 32 || password.length < 3) {
-            alert("Password should be between 3-32 characters long.")
+        else if (password.length > 32 || password.length < 8) {
+            alert("Password should be between 8-32 characters long.")
         }
         else {
             createUser();
@@ -52,59 +58,65 @@ function SignUp() {
 
     //html of the page
     return (
-        <div className="SignUp container text-center">
+        <div className="SignUp text-center">
 
         <PixelBackground color="blue"></PixelBackground>
 
-        <h1 className="p-2">Sign Up for Astroteach</h1>
+        <h1 className="pb-2">Sign Up for Astroteach</h1>
         <p>Please fill out your information below to create an account and get started with Astroteach!</p>
 
-        <form method="POST" onSubmit={handleSubmit} autoComplete="off">
+        <Form method="POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset className="d-inline-block">
                 <div className="mb-3">
-                    <label htmlFor="username" className="form-label text-start w-100">Username</label>
-                    <input
-                        name="username"
-                        className="form-control"
+                    <FloatingLabel label="Username">
+                        <Form.Control
+                        id="signup-password"
                         type="text"
+                        placeholder="username"
+                        name="username"
                         required
                         onChange={(event) => {
                             setUserName(event.target.value);
-                        }}>
-                    </input>
-                    <div className="form-text">Username must be between 3-15 characters long.</div>
+                        }}
+                        ></Form.Control>
+                    </FloatingLabel>
+                    <Form.Text id="signup-password">Username must be between 3-15 characters long.</Form.Text>
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label text-start w-100">Email</label>
-                    <input
-                        name="email"
-                        className="form-control"
+                    <FloatingLabel label="Email">
+                        <Form.Control
+                        id="signup-email"
                         type="email"
                         placeholder="name@example.com"
+                        name="email"
                         required
                         onChange={(event) => {
                             setEmail(event.target.value);
-                        }}>
-                    </input>
+                        }}
+                        ></Form.Control>
+                    </FloatingLabel>
                 </div>
+
                 <div className="mb-3">
-                    <label htmlFor="pass" className="form-label text-start w-100">Password</label>
-                    <input
-                        name="pass"
-                        className="form-control"
+                    <FloatingLabel label="Password">
+                        <Form.Control
+                        id="signup-password"
                         type="password"
-                        placeholder=""
+                        placeholder="password"
+                        name="password"
                         required
                         onChange={(event) => {
                             setPassword(event.target.value);
-                        }}>
-                    </input>
-                    <div className="form-text">Password must be between 3-32 characters long.</div>
+                        }}
+                        ></Form.Control>
+                    </FloatingLabel>
+                    <Form.Text id="signup-password">Password must be between 8-32 characters long.</Form.Text>
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <Button type="submit">Submit</Button>
             </fieldset>
-            </form>
+            </Form>
 
         </div>
     );

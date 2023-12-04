@@ -155,7 +155,7 @@ app.post("/addXP", (req, res) => {
 app.post("/userDatabaseAdd", (req, res) => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            UserModel.findOneAndUpdate({_id:"ThGjSNuLH9NfdMgp3d8NzwvyQGE2"}, {[req.body.field]: req.body.value}, {upsert: true})
+            UserModel.findOneAndUpdate({_id:user.uid}, {[req.body.field]: req.body.value}, {upsert: true})
             .then(() => res.send(true))
             .catch((err) => res.send(err));
            
