@@ -65,7 +65,7 @@ function Profile() {
                         <tr key={3}>
                             <th scope="row">Character</th>
                             <td>
-                                <img src={PlanetCharacter[user.characterPic]} alt="User Character" />
+                                <img src={PlanetCharacter[user.characterPic]} alt="User Character  " />
                                 <button onClick={() => setEditingCharacter(true)}>Edit</button>
                                 {editingCharacter && (
                                     <div className="character-selection">
