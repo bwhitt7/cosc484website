@@ -65,6 +65,20 @@ function Profile() {
                             <td>
                                 <img src={PlanetCharacter[user.characterPic]} alt="User Character" />
                                 <button onClick={() => setEditingCharacter(true)}>Edit</button>
+                                {editingCharacter && (
+                                    <div className="character-selection">
+                                        {Object.entries(PlanetCharacter).map(([key, image]) => (
+                                            <img 
+                                                key={key} 
+                                                src={image} 
+                                                alt={`${key}`}
+                                                onClick={() => setSelectedCharacter(key)}
+                                                className={selectedCharacter === key ? 'selected' : ''}
+                                            />
+                                        ))}
+                                        <button onClick={saveCharacterSelection}>Save Character</button>
+                                    </div>
+                                )}
                             </td>
                         </tr>
                         <tr key={4}>
@@ -76,20 +90,6 @@ function Profile() {
                     </tbody>
                 </Table>
 
-                {editingCharacter && (
-                    <div className="character-selection">
-                        {Object.entries(PlanetCharacter).map(([key, image]) => (
-                            <img 
-                                key={key} 
-                                src={image} 
-                                alt={`${key}`}
-                                onClick={() => setSelectedCharacter(key)}
-                                className={selectedCharacter === key ? 'selected' : ''}
-                            />
-                        ))}
-                    <    button onClick={saveCharacterSelection}>Save Character</button>
-                    </div>
-                )}
                 <Table striped bordered>
                     <tbody>
                         {PlanetInfo.map((data, i) => {
