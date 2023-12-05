@@ -18,6 +18,11 @@ const schema = new mongoose.Schema({
         type: Number,
         required: false
     }
+    character: {
+        type: String,
+        required: false,
+        default: 'defaultCharacter'
+    }
 }, {strict: false});
 
 const UserModel = mongoose.model("users", schema);
