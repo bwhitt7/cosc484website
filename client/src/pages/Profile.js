@@ -1,5 +1,5 @@
 //User profile page
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
@@ -10,6 +10,7 @@ import { getCurrentUser } from "../api";
 import PixelBackground from "../components/PixelBackground";
 import PlanetInfo from "../data/PlanetInfo";
 import PlanetImages from "../data/PlanetImages";
+import PlanetCharacter from "../data/PlanetCharacter";
 
 //style imports
 import "../styles/homepage.css";
@@ -23,7 +24,20 @@ function Profile() {
 
     //get current user
     const { user, setUser } = useContext(UserContext);
+    const [selectedCharacter, setSelectedCharacter] = useState(user.characterPic || 'defaultCharacter');
+    const [editingCharacter, setEditingCharacter] = useState(false);
 
+    //character editing
+    const handleEditCharacter = () => {
+        setEditingCharacter(true);
+    };
+
+    const saveCharacterSelection = () => {
+        setUser({ ...user, character: selectedCharacter });
+        setEditingCharacter(false);
+    };
+
+    
     const logOutUser = () => {
         Axios.post("logOutCurrentUser").then((response) => {
 
@@ -47,6 +61,13 @@ function Profile() {
                             <td>{user.email}</td>
                         </tr>
                         <tr key={3}>
+                            <th scope="row">Character</th>
+                            <td>
+                                <img src={PlanetCharacter[user.characterPic]} alt="User Character" />
+                                <button onClick={() => setEditingCharacter(true)}>Edit</button>
+                            </td>
+                        </tr>
+                        <tr key={4}>
                             <th scope="row">XP</th>
                             <td>
                                 <ProgressBar variant="success" animated  now={user.xp} max={100} label={user.xp}></ProgressBar>
@@ -55,6 +76,20 @@ function Profile() {
                     </tbody>
                 </Table>
 
+                {editingCharacter && (
+                    <div className="character-selection">
+                        {Object.entries(PlanetCharacter).map(([key, image]) => (
+                            <img 
+                                key={key} 
+                                src={image} 
+                                alt={`${key}`}
+                                onClick={() => setSelectedCharacter(key)}
+                                className={selectedCharacter === key ? 'selected' : ''}
+                            />
+                        ))}
+                    <    button onClick={saveCharacterSelection}>Save Character</button>
+                    </div>
+                )}
                 <Table striped bordered>
                     <tbody>
                         {PlanetInfo.map((data, i) => {
