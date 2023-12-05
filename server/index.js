@@ -166,7 +166,16 @@ app.post("/userDatabaseAdd", (req, res) => {
     });
 });
 
+//this is for character remove if it doesnt work
+app.post("/updateCharacter", (req, res) => {
+    const userId = req.body.userId;
+    const newCharacter = req.body.character;
 
+    UserModel.findByIdAndUpdate(userId, { character: newCharacter }, { new: true })
+        .then(updatedUser => res.json(updatedUser))
+        .catch(err => res.status(400).json(err));
+});
+//remove if character doesnt work
 app.listen(3001, () => {
     console.log("Server is running!");
 });
