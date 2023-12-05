@@ -21,3 +21,4 @@ This is where we will design and test out the HTML before putting it into the fr
 - Icons from https://fontawesome.com/
 - Pixel backgrounds from https://norma-2d.itch.io/
 - Pixel planets from https://overboy.itch.io/
+- Planet facts from https://science.nasa.gov/solar-system/planets/
