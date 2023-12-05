@@ -62,8 +62,8 @@ function SignUp() {
 
         <PixelBackground color="blue"></PixelBackground>
 
-        <h1 className="pb-2">Sign Up for Astroteach</h1>
-        <p>Please fill out your information below to create an account and get started with Astroteach!</p>
+        <h1 className="pb-2 text-white">Sign Up for Astroteach</h1>
+        <p className="text-white">Please fill out your information below to create an account and get started with Astroteach!</p>
 
         <Form method="POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset className="d-inline-block">

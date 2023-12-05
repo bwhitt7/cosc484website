@@ -1,6 +1,10 @@
 /*Image from Space Backgrounds Free Pixel Art Pack
 link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
+
+.planets{
+    position: relative;
+}
 .planets a{
     position: absolute;
     transition: 1s;
@@ -27,7 +31,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 }
 
 #sun{
-    top: 175px;
+    top: 25px;
     left: 3px;
     width: 235px;
     height: 235px;
@@ -36,7 +40,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #mercury{
-    top: 280px;
+    top: 130px;
     left: 250px;
     width: 30px;
     height: 30px;
@@ -45,7 +49,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #venus{
-    top: 220px;
+    top: 70px;
     left: 300px;
     width: 60px;
     height: 60px;
@@ -54,14 +58,14 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #earth{
-    top: 270px;
+    top: 120px;
     left: 375px;
     width: 60px;
     height: 60px;
 }
 
 #mars{
-    top: 220px;
+    top: 70px;
     left: 440px;
     width: 47px;
     height: 47px;
@@ -70,7 +74,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #jupiter{
-    top: 225px;
+    top: 75px;
     left: 585px;
     width: 110px;
     height: 110px;
@@ -78,7 +82,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #saturn{
-    top: 150px;
+    top: 0px;
     left: 710px;
     width: 240px;
     height: 240px;
@@ -86,7 +90,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #uranus{
-    top: 235px;
+    top: 85px;
     left: 960px;
     width: 95px;
     height: 95px;
@@ -94,7 +98,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #neptune{
-    top: 240px;
+    top: 90px;
     left: 1080px;
     width: 85px;
     height: 85px;
@@ -102,7 +106,7 @@ link: https://norma-2d.itch.io/space-backgrounds-pack*/
 
 
 #pluto{
-    top: 270px;
+    top: 120px;
     left: 1200px;
     width: 26px;
     height: 26px;

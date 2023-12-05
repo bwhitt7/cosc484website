@@ -58,7 +58,6 @@ function App() {
             </Routes>
             </div>
             </UserContext.Provider>
-            <footer className="text-center p-2">Look at the code on <a href="https://github.com/bwhitt7/cosc484website"><FontAwesomeIcon icon={icon({name: 'github', style:"brands"})} /> Github!</a></footer>
             </Container>
         </BrowserRouter>
     )

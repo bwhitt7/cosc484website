@@ -24,11 +24,11 @@ function Planet(props) {
         <div className="planetPage">
             <PixelBackground color={props.color}></PixelBackground>
 
-            <h1 className="text-center pb-2">{props.name}</h1>
+            <h1 className="text-center pb-2 text-white">{props.name}</h1>
 
-            <Row className="mb-3 mx-0">
+            <Row className="mb-3">
 
-                <Col lg={4} style={{
+                <Col lg={5} style={{
                     backgroundImage:"url("+PlanetImages[props.shortname]+")",
                     backgroundSize:"contain",
                     backgroundPosition:"center",
@@ -37,7 +37,7 @@ function Planet(props) {
                     imageRendering:"crisp-edges"
                     }}></Col>
 
-                <Col lg={8}>
+                <Col lg={7}>
                     <Table bordered hover>
                         <tbody>
                             {props.table.map((data) => {

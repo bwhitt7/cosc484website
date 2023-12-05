@@ -108,18 +108,18 @@ function Quiz(props){
     return(
         <div className="Quiz text-center">
             <PixelBackground color={props.color}></PixelBackground>
-            <h1 className="pb-2">{props.name} Quiz</h1>
+            <h1 className="pb-2 text-white">{props.name} Quiz</h1>
 
             {finished==false ? 
             <Form>
-                {user[props.shortname+"_quiz"] ? <div>Quiz already completed!</div> : <></>}
+                {user[props.shortname+"_quiz"] ? <div className="text-white pb-3">Quiz already completed!</div> : <></>}
                 {quizQuestions}
                 <Button variant="primary" onClick={checkQuestions} className="w-100">Submit</Button>
             </Form>
             :
             <Card body>
                 <div>{numRight} / {numOfQuestions}</div>
-                {(numRight == numOfQuestions) ? <div>All answers correct! +10 xp</div> : ""}
+                {(numRight == numOfQuestions) ? <div>All answers correct! {(user[props.shortname+"_quiz"] ? "" : "+10 xp")}</div> : ""}
             </Card>
             }
         </div>

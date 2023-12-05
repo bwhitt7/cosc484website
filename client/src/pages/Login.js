@@ -69,8 +69,8 @@ function LogIn() {
 
             <PixelBackground color="purple"></PixelBackground>
 
-            <h1 className="pb-2">Log In to Astroteach</h1>
-            <p>Please enter your username and password, or create an account <Link to="/signup" className="link-primary">here</Link>.</p>
+            <h1 className="pb-2 text-white">Log In to Astroteach</h1>
+            <p className="text-white">Please enter your username and password, or create an account <Link to="/signup" className="link-primary">here</Link>.</p>
 
             <Form method="POST" onSubmit={handleSubmit} autoComplete="off">
             <fieldset className="d-inline-block">

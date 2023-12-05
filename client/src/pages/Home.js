@@ -17,9 +17,10 @@ function Home() {
     return (
         <div className="Home">
 
-            <h1 className="text-center pb-2"><FontAwesomeIcon icon={icon({name: 'meteor'})} /> AstroTeach</h1>
+            <h1 className="text-center pb-2 text-white"><FontAwesomeIcon icon={icon({name: 'meteor'})} /> AstroTeach</h1>
             
-            <p className="text-center">Welcome to the Solar System! Click on a planet to learn more about it!</p>
+            <p className="text-center text-white">Welcome to the Solar System! Click on a planet to learn more about it!</p>
+
             <div className="planets">
                 {PlanetInfo.map((data) => {
                     return(

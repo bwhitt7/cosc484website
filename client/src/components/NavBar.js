@@ -45,6 +45,7 @@ function NavBar() {
                         <LinkContainer to="/login"><Nav.Link><FontAwesomeIcon icon={icon({name: 'arrow-right-from-bracket'})} /> Log In</Nav.Link></LinkContainer>
                         </>)}
                     </Nav>
+                    <Navbar.Text><a href="https://github.com/bwhitt7/cosc484website" target="_blank"><FontAwesomeIcon icon={icon({name: 'github', style:"brands"})} /> Github Code</a></Navbar.Text>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

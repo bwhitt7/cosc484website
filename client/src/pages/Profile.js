@@ -34,7 +34,7 @@ function Profile() {
         <div className="Profile">
             <PixelBackground color="gray"></PixelBackground>
             <Container>
-                <h1 className="text-center"><FontAwesomeIcon icon={icon({name: 'user-astronaut'})} /> User Profile</h1>
+                <h1 className="text-center text-white"><FontAwesomeIcon icon={icon({name: 'user-astronaut'})} /> User Profile</h1>
 
                 <Table striped bordered>
                     <tbody>
