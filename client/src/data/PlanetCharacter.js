@@ -16,7 +16,8 @@ import starC from "../images/Characters/Star.png";
 
 
 
-const PlanetCharacter = {
+const PlanetCharacter = [
+    astronautC, 
     sunC,
     mercuryC,
     venusC,
@@ -29,9 +30,8 @@ const PlanetCharacter = {
     plutoC,
     moonC, 
     alienC,
-    astronautC, 
     meteorC,
     starC 
-}
+]
 
 export default PlanetCharacter;

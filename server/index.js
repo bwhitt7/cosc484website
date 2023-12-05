@@ -81,10 +81,11 @@ app.post("/createUser", (req, res) => {
                 _id: auth.currentUser.uid,
                 username: req.body.username,
                 email: req.body.email,
-                xp: 0
+                xp: 0,
+                characterPic: 0
             })
             .then(() => {
-                res.send("User created");
+                res.send(true);
             })
             .catch((err) => {
                 error = err;
@@ -98,7 +99,7 @@ app.post("/createUser", (req, res) => {
         if (error){
             deleteUser(auth.currentUser)
             .then(() => {
-                res.status(400).json(error);
+                res.send(false);
             })
             .catch((err) => {
                 //bro idk
@@ -106,7 +107,7 @@ app.post("/createUser", (req, res) => {
         }
     })
     .catch((err) => {
-        res.status(400).send("");
+        res.status(400).send(false);
     });
 
 

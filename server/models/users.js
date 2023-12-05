@@ -19,9 +19,9 @@ const schema = new mongoose.Schema({
         required: false
     },
     characterPic: {
-        type: String,
-        required: false,
-        default: 'defaultCharacter'
+        type: Number,
+        required: true,
+        default: 0
     }
 }, {strict: false});
 

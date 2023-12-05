@@ -39,6 +39,7 @@ function PixelBackground(props){
                 background: url(`+bg+`);
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-attachment: fixed;
                 image-rendering: pixelated;
                 image-rendering: -moz-crisp-edges;
                 image-rendering: crisp-edges;

@@ -8,6 +8,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { UserContext } from "../App";
 import {getCurrentUser} from "../api";
 import PlanetInfo from "../data/PlanetInfo";
+import PlanetCharacter from "../data/PlanetCharacter";
 
 //bootstrap imports
 import Container from 'react-bootstrap/Container';
@@ -15,7 +16,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {LinkContainer} from 'react-router-bootstrap';
-
+import Image from 'react-bootstrap/Image';
 
 function NavBar() {
     //get current user
@@ -30,7 +31,7 @@ function NavBar() {
                     <Nav className="me-auto">
                         <LinkContainer to="/"><Nav.Link><FontAwesomeIcon icon={icon({name: 'home'})} /> Home</Nav.Link></LinkContainer>
                         {user ? (<>
-                        <LinkContainer to="/profile"><Nav.Link><FontAwesomeIcon icon={icon({name: 'user'})} /> Profile</Nav.Link></LinkContainer>
+                        <LinkContainer to="/profile"><Nav.Link><Image src={PlanetCharacter[user.characterPic]} className="character-pfp" roundedCircle></Image> Profile</Nav.Link></LinkContainer>
                         <NavDropdown title={<span><FontAwesomeIcon icon={icon({name: 'globe'})} /> Planets</span>} id="planet-dropdown">
                             {PlanetInfo.map((data) => {
                                 return(

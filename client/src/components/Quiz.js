@@ -119,7 +119,7 @@ function Quiz(props){
             :
             <Card body>
                 <div>{numRight} / {numOfQuestions}</div>
-                {(numRight == numOfQuestions) ? <div>All answers correct! {(user[props.shortname+"_quiz"] ? "" : "+10 xp")}</div> : ""}
+                {(numRight == numOfQuestions) ? <div>All answers correct! You'll get +10xp for your first completion.</div> : ""}
             </Card>
             }
         </div>

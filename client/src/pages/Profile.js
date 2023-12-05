@@ -11,6 +11,7 @@ import PixelBackground from "../components/PixelBackground";
 import PlanetInfo from "../data/PlanetInfo";
 import PlanetImages from "../data/PlanetImages";
 import PlanetCharacter from "../data/PlanetCharacter";
+import { userDatabaseAdd } from "../api";
 
 //style imports
 import "../styles/homepage.css";
@@ -21,21 +22,30 @@ import Table from 'react-bootstrap/Table';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Collapse from 'react-bootstrap/Collapse';
 
 function Profile() {
 
     //get current user
     const { user, setUser } = useContext(UserContext);
-    const [selectedCharacter, setSelectedCharacter] = useState(user.characterPic || 'defaultCharacter');
-    const [editingCharacter, setEditingCharacter] = useState(false);
+    const [ selectedCharacter, setSelectedCharacter ] = useState(user.characterPic || 0);
+    const [ editingCharacter, setEditingCharacter ] = useState(false);
 
-    //character editing
-    const saveCharacterSelection = () => {
-        setUser({ ...user, characterPic: selectedCharacter });
-        setEditingCharacter(false);
-    };
+
+    //update character
+    const updateCharacter = (num) =>{
+        userDatabaseAdd("characterPic", num).then((res) =>{
+            console.log("Update character")
+            getCurrentUser().then((res) => {
+                setUser(res);
+                console.log(user["characterPic"]);
+            });
+        });
+        //setEditingCharacter(false);
+    }
 
     
+    //currently doesnt work
     const logOutUser = () => {
         Axios.post("logOutCurrentUser").then((response) => {
 
@@ -48,36 +58,39 @@ function Profile() {
             <Container>
                 <h1 className="text-center text-white"><FontAwesomeIcon icon={icon({name: 'user-astronaut'})} /> User Profile</h1>
 
-                <Table striped bordered>
+                <Table striped bordered responsive="lg">
                     <tbody>
                         <tr key={1}>
+                            <th scope="row">Character</th>
+                            <td>
+                                <img src={PlanetCharacter[user.characterPic]} alt="User Character" className="character-image"/>
+
+                                <a onClick={() => setEditingCharacter(!editingCharacter)}><FontAwesomeIcon icon={icon({name: 'pencil'})} /></a>
+                                {editingCharacter && (
+                                    <Collapse in={editingCharacter}>
+                                        <div>
+                                        {PlanetCharacter.map((data, i) => (
+                                            <Button variant="outline-primary" className="" active={user.characterPic == i ? true : false}>
+                                            <img 
+                                                key={i} 
+                                                src={data} 
+                                                alt={i}
+                                                onClick={() => updateCharacter(i)}
+                                                className="character-image"
+                                            /></Button>
+                                        ))}
+                                        </div>
+                                    </Collapse>
+                                )}
+                            </td>
+                        </tr>
+                        <tr key={2}>
                             <th scope="row">Username</th>
                             <td>{user.username}</td>
                         </tr>
-                        <tr key={2}>
+                        <tr key={3}>
                             <th scope="row">Email</th>
                             <td>{user.email}</td>
-                        </tr>
-                        <tr key={3}>
-                            <th scope="row">Character</th>
-                            <td>
-                                <img src={PlanetCharacter[selectedCharacter]} alt="User Character" />
-                                <button onClick={() => setEditingCharacter(true)}>Edit</button>
-                                {editingCharacter && (
-                                    <div className="character-selection">
-                                        {Object.entries(PlanetCharacter).map(([key, image]) => (
-                                            <img 
-                                                key={key} 
-                                                src={image} 
-                                                alt={`${key}`}
-                                                onClick={() => setSelectedCharacter(key)}
-                                                className={`character-image ${selectedCharacter === key ? 'selected' : ''}`}
-                                            />
-                                        ))}
-                                        <button onClick={saveCharacterSelection}>Save Character</button>
-                                    </div>
-                                )}
-                            </td>
                         </tr>
                         <tr key={4}>
                             <th scope="row">XP</th>
@@ -88,7 +101,7 @@ function Profile() {
                     </tbody>
                 </Table>
 
-                <Table striped bordered>
+                <Table striped bordered responsive="lg">
                     <tbody>
                         {PlanetInfo.map((data, i) => {
                             if (user[data.shortname + "_quiz"])

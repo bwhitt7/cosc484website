@@ -15,7 +15,7 @@ $body-bg-dark: #111;
 
 $theme_colors: (
   "blue": $blue-500,
-  "gray": $gray-500,
+  "gray": $gray-600,
   "green": $green-500,
   "purple": $purple-500,
   "red": $red-500,
@@ -29,6 +29,12 @@ $theme_colors: (
       --bs-btn-bg: #{$b};
       --bs-btn-hover-bg: #{darken($b, 20%)};
       --bs-btn-color: white;
+      --bs-btn-hover-color: white;
+    }
+    .btn-outline-primary {
+      --bs-btn-bg: none;
+      --bs-btn-hover-bg: #{$b};
+      --bs-btn-color: #{$b};
       --bs-btn-hover-color: white;
     }
   }

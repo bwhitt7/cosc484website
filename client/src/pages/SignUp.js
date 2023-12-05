@@ -43,15 +43,12 @@ function SignUp() {
             password,
         }).then((response) => {
             console.log(response);
-            if (response.status !== 400 && response.data){
+            if (response.data == true){
                 alert("User "+username+" created");
                 navigate("/LogIn");
             }
-            else if (!response.data){
-                alert("Account with this email already exists");
-            }
             else {
-                alert("FAILURE");
+                alert("Failed to create account");
             }
         });
     }
