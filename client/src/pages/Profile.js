@@ -30,12 +30,8 @@ function Profile() {
     const [editingCharacter, setEditingCharacter] = useState(false);
 
     //character editing
-    const handleEditCharacter = () => {
-        setEditingCharacter(true);
-    };
-
     const saveCharacterSelection = () => {
-        setUser({ ...user, character: selectedCharacter });
+        setUser({ ...user, characterPic: selectedCharacter });
         setEditingCharacter(false);
     };
 
@@ -65,7 +61,7 @@ function Profile() {
                         <tr key={3}>
                             <th scope="row">Character</th>
                             <td>
-                                <img src={PlanetCharacter[user.characterPic]} alt="User Character  " />
+                                <img src={PlanetCharacter[selectedCharacter]} alt="User Character" />
                                 <button onClick={() => setEditingCharacter(true)}>Edit</button>
                                 {editingCharacter && (
                                     <div className="character-selection">
