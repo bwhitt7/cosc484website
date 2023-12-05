@@ -19,6 +19,8 @@ import "../styles/homepage.css";
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 function Profile() {
 
