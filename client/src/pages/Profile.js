@@ -75,7 +75,7 @@ function Profile() {
                                                 src={image} 
                                                 alt={`${key}`}
                                                 onClick={() => setSelectedCharacter(key)}
-                                                className={selectedCharacter === key ? 'selected' : ''}
+                                                className={`character-image ${selectedCharacter === key ? 'selected' : ''}`}
                                             />
                                         ))}
                                         <button onClick={saveCharacterSelection}>Save Character</button>
