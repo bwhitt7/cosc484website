@@ -17,8 +17,8 @@ const schema = new mongoose.Schema({
     xp: {
         type: Number,
         required: false
-    }
-    character: {
+    },
+    characterPic: {
         type: String,
         required: false,
         default: 'defaultCharacter'
