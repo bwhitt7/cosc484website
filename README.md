@@ -1,9 +1,12 @@
 # AstroTeach
 A website that teaches astronomy!!
 
-IMPORTANT! Please do not use an actual email or password for this site. There is currently a glitch where people may gain access to the wrong accounts.
+IMPORTANT! Please do not use an actual email or password for this site. There is currently a glitch where people may gain access to the wrong accounts. I recommend using a dummy email and password.
+
 If you wish to utilize the website without making an account, please use the following credentials:
+
 Username: user@email.com
+
 Password: password123
 
 ## Client
